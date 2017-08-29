@@ -55,6 +55,10 @@ Version: 1.0
     <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
     <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+	
+	<!-- SWEETALERT -->
+	<script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/sweetalert.min.js"></script>
+	<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/sweetalert.css">
 
     <!-- HTML5 for IE -->
     <!--[if IE]>
