@@ -202,6 +202,15 @@ function getImage($meta_key){
 	return $image;
 }
 
+//Вывод id категории
+function getCurrentCatID(){
+	global $wp_query;
+	if(is_category()){
+		$cat_ID = get_query_var('cat');
+	}
+	return $cat_ID;
+}
+
 /**********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************
 ********************************************************************РАЗДЕЛ "ОТЗЫВЫ" В АДМИНКЕ****************************************************************
@@ -256,6 +265,136 @@ function true_post_type_reviews( $reviews ) {
 	 return $reviews;
 }
 add_filter( 'post_updated_messages', 'true_post_type_reviews' );
+
+/**********************************************************************************************************************************************************
+***********************************************************************************************************************************************************
+************************************************************ПЕРЕИМЕНОВАВАНИЕ ЗАПИСЕЙ В ПРОДУКТЫ************************************************************
+***********************************************************************************************************************************************************
+***********************************************************************************************************************************************************/
+function change_post_menu_label() {
+    global $menu, $submenu;
+    $menu[5][0] = 'Проекты';
+    $submenu['edit.php'][5][0] = 'Проекты';
+    $submenu['edit.php'][10][0] = 'Добавить проект';
+    $submenu['edit.php'][16][0] = 'Метки';
+    echo '';
+}
+add_action( 'admin_menu', 'change_post_menu_label' );
+
+function change_post_object_label() {
+    global $wp_post_types;
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = 'Продукты';
+    $labels->singular_name = 'Проекты';
+    $labels->add_new = 'Добавить проект';
+    $labels->add_new_item = 'Добавить проект';
+    $labels->edit_item = 'Редактировать проект';
+    $labels->new_item = 'Добавить проект';
+    $labels->view_item = 'Посмотреть проект';
+    $labels->search_items = 'Найти проект';
+    $labels->not_found = 'Не найдено';
+    $labels->not_found_in_trash = 'Корзина пуста';
+}
+add_action( 'init', 'change_post_object_label' );
+
+/**********************************************************************************************************************************************************
+***********************************************************************************************************************************************************
+*****************************************************************REMOVE CATEGORY_TYPE SLUG*********************************************************************
+***********************************************************************************************************************************************************
+***********************************************************************************************************************************************************/
+//Удаление  из url таксономии
+function true_remove_slug_from_category( $url, $term, $taxonomy ){
+
+	$taxonomia_name = 'category';
+	$taxonomia_slug = 'category';
+
+	if ( strpos($url, $taxonomia_slug) === FALSE || $taxonomy != $taxonomia_name ) return $url;
+
+	$url = str_replace('/' . $taxonomia_slug, '', $url);
+
+	return $url;
+}
+add_filter( 'term_link', 'true_remove_slug_from_category', 10, 3 );
+
+//Перенаправление url в случае удаления category
+function parse_request_url_category( $query ){
+
+	$taxonomia_name = 'category';
+
+	if( $query['attachment'] ) :
+		$condition = true;
+		$main_url = $query['attachment'];
+	else:
+		$condition = false;
+		$main_url = $query['name'];
+	endif;
+
+	$termin = get_term_by('slug', $main_url, $taxonomia_name);
+
+	if ( isset( $main_url ) && $termin && !is_wp_error( $termin )):
+
+		if( $condition ) {
+			unset( $query['attachment'] );
+			$parent = $termin->parent;
+			while( $parent ) {
+				$parent_term = get_term( $parent, $taxonomia_name);
+				$main_url = $parent_term->slug . '/' . $main_url;
+				$parent = $parent_term->parent;
+			}
+		} else {
+			unset($query['name']);
+		}
+
+		switch( $taxonomia_name ):
+			case 'category':{
+				$query['category_name'] = $main_url;
+				break;
+			}
+			case 'post_tag':{
+				$query['tag'] = $main_url;
+				break;
+			}
+			default:{
+				$query[$taxonomia_name] = $main_url;
+				break;
+			}
+		endswitch;
+
+	endif;
+
+	return $query;
+
+}
+add_filter('request', 'parse_request_url_category', 1, 1 );
+
+/**********************************************************************************************************************************************************
+***********************************************************************************************************************************************************
+*****************************************************************REMOVE POST_TYPE SLUG*********************************************************************
+***********************************************************************************************************************************************************
+***********************************************************************************************************************************************************/
+//Удаление sluga из url таксономии 
+function remove_slug_from_post( $post_link, $post, $leavename ) {
+	if ( /*'videocatalogue' != $post->post_type && 'about-us' ||*/ 'publish' != $post->post_status ) {
+		return $post_link;
+	}
+		$post_link = str_replace( '/' . $post->post_type . '/', '/', $post_link );
+	return $post_link;
+}
+add_filter( 'post_type_link', 'remove_slug_from_post', 10, 3 );
+
+function parse_request_url_post( $query ) {
+	if ( ! $query->is_main_query() )
+		return;
+
+	if ( 2 != count( $query->query ) || ! isset( $query->query['page'] ) ) {
+		return;
+	}
+
+	if ( ! empty( $query->query['name'] ) ) {
+		$query->set( 'post_type', array( 'post', 'page' ) );
+	}
+}
+add_action( 'pre_get_posts', 'parse_request_url_post' );
 
 /**********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************

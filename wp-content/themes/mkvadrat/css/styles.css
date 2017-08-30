@@ -2359,7 +2359,7 @@ textarea:focus:-ms-input-placeholder {
   transform: scale(1.1);
 }
 
-.main-works .works-list ul li:nth-child(1) {
+/*.main-works .works-list ul li:nth-child(1) {
   background-color: #0567c6;
 }
 
@@ -2405,7 +2405,7 @@ textarea:focus:-ms-input-placeholder {
 
 .main-works .works-list ul li:nth-child(12) {
   background-color: #89c605;
-}
+}*/
 
 /*--------------------------------------------------------*/
 /*--------------------- end main-works -------------------*/
