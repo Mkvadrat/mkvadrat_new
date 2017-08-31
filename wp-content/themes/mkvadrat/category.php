@@ -59,16 +59,10 @@ get_header();
                                 
                                 if(!empty($projects)){
                                 foreach( $projects as $projects_list ){
-                                    
-                                    $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($projects_list->ID), 'full'); 
                             ?>		
-                                <li style="background-color: <?php echo get_post_meta( $projects_list->ID, 'background_color_projects_category', $single = true ) ?>">
+                                <li style="background-color: <?php echo get_post_meta( $projects_list->ID, 'background_color_projects_category', $single = true ); ?>">
                                     <a href="<?php echo get_permalink($projects_list->ID); ?>">
-                                        <?php if(!empty($image_url)){ ?>
-                                            <img src="<?php echo $image_url[0]; ?>" alt="<?php echo get_post_meta( get_post_thumbnail_id($projects_list->ID), '_wp_attachment_image_alt', true ); ?>">
-                                        <?php }else{ ?>
-                                            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/no-projects-image.png" alt="">
-                                        <?php } ?>
+                                        <?php echo getImageCourse($projects_list->ID, 'logo_image_projects_category', 'small'); ?>
                                     </a>
                                 </li>
                             <?php	

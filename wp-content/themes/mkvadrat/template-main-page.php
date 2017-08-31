@@ -145,55 +145,55 @@ get_header();
         <div class="collage-block">
             <div id="card-1" class="collage-1">
                 <div class="front"> 
-                    <?php echo getImage('collage_a_fourth_block_main_page'); ?>
+                    <?php echo getImage('collage_a_fourth_block_main_page', 'big'); ?>
                 </div> 
                 <div class="back">
-                    <?php echo getImage('collage_b_fourth_block_main_page'); ?>
+                    <?php echo getImage('collage_b_fourth_block_main_page', 'big'); ?>
                 </div> 
             </div>
 
             <div id="card-2" class="collage-2"> 
                 <div class="front"> 
-                    <?php echo getImage('collage_c_fourth_block_main_page'); ?>
+                    <?php echo getImage('collage_c_fourth_block_main_page', 'big'); ?>
                 </div> 
                 <div class="back">
-                    <?php echo getImage('collage_d_fourth_block_main_page'); ?>
+                    <?php echo getImage('collage_d_fourth_block_main_page', 'big'); ?>
                 </div> 
             </div>
 
             <div id="card-4" class="collage-4"> 
                 <div class="front"> 
-                    <?php echo getImage('collage_e_fourth_block_main_page'); ?>
+                    <?php echo getImage('collage_e_fourth_block_main_page', 'big'); ?>
                 </div> 
                 <div class="back">
-                    <?php echo getImage('collage_f_fourth_block_main_page'); ?>
+                    <?php echo getImage('collage_f_fourth_block_main_page', 'big'); ?>
                 </div> 
             </div>
 
             <div id="card-3" class="collage-3"> 
                 <div class="front"> 
-                    <?php echo getImage('collage_g_fourth_block_main_page'); ?>
+                    <?php echo getImage('collage_g_fourth_block_main_page', 'big'); ?>
                 </div> 
                 <div class="back">
-                    <?php echo getImage('collage_h_fourth_block_main_page'); ?>
+                    <?php echo getImage('collage_h_fourth_block_main_page', 'big'); ?>
                 </div> 
             </div>
 
             <div id="card-5" class="collage-5"> 
                 <div class="front"> 
-                    <?php echo getImage('collage_i_fourth_block_main_page'); ?>
+                    <?php echo getImage('collage_i_fourth_block_main_page', 'big'); ?>
                 </div> 
                 <div class="back">
-                    <?php echo getImage('collage_j_fourth_block_main_page'); ?>
+                    <?php echo getImage('collage_j_fourth_block_main_page', 'big'); ?>
                 </div> 
             </div>
 
             <div id="card-6" class="collage-6"> 
                 <div class="front"> 
-                    <?php echo getImage('collage_k_fourth_block_main_page'); ?>
+                    <?php echo getImage('collage_k_fourth_block_main_page', 'big'); ?>
                 </div> 
                 <div class="back">
-                    <?php echo getImage('collage_l_fourth_block_main_page'); ?>
+                    <?php echo getImage('collage_l_fourth_block_main_page', 'big'); ?>
                 </div> 
             </div>
         </div>

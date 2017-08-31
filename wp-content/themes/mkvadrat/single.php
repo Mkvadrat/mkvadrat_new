@@ -12,7 +12,20 @@ get_header();
 ?>
  
     <!-- start main-works-in -->
-
+    <?php
+        $image = getImageCourse( get_the_ID(), 'main_image_projects_page', 'big');
+        $description = html_entity_decode( get_post_meta( get_the_ID(), 'description_area_projects_page', $single = true ));
+        $information = html_entity_decode( get_post_meta( get_the_ID(), 'information_projects_page', $single = true ));
+        $block_a = get_post_meta( get_the_ID(), 'a_applied_technologies_projects_page', $single = true );
+        $block_b = get_post_meta( get_the_ID(), 'b_applied_technologies_projects_page', $single = true );
+        $block_c = get_post_meta( get_the_ID(), 'c_applied_technologies_projects_page', $single = true );
+        $block_d = get_post_meta( get_the_ID(), 'd_applied_technologies_projects_page', $single = true );
+        $logo = getImageCourse( get_the_ID(), 'logo_image_projects_page', 'small');
+        $color =  get_post_meta( get_the_ID(), 'preview_color_projects_page', $single = true );
+        $preview = html_entity_decode( get_post_meta( get_the_ID(), 'preview_projects_page', $single = true ));
+        
+    ?>
+    
     <main class="main-works-in">
 
         <div class="container-fluid big-photo-project">
@@ -21,76 +34,74 @@ get_header();
                     <div class="col-md-12">
                         <div class="block-photo-project">
                             <div class="logo-project">
-                                <?php $image_url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'full'); ?>
-                                <?php if(!empty($image_url)){ ?>
-                                    <img src="<?php echo $image_url[0]; ?>" alt="<?php echo get_post_meta( get_post_thumbnail_id($projects_list->ID), '_wp_attachment_image_alt', true ); ?>">
-                                <?php }else{ ?>
-                                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/no-projects-image.png" alt="">
-                                <?php } ?>
+                                <?php echo $logo; ?>
                             </div>
-                            <img class="project-photo" src="images/project-photo.jpg" alt="">
+                            <?php echo $image; ?>
                         </div>
 
                         <div class="two-halves-block">
                             <div class="left-side">
                                 <div class="contant-side">
-                                    <p class="title">Отель Норд</p>
-                                    <p>Отель Нород является одним из самых больших отелей в Мире! да да именно в Мире, Вам не послышалось! Люди со все йвселенно слитаются сюда что бы провести время с бакальчиком апельсинового сока в подвале у басейна Норд.</p>
+                                    <p class="title"><?php the_title(); ?></p>
+                                    <?php echo $description; ?>
                                 </div>
                             </div>
+                            <?php if(!empty($information)){ ?>
                             <div class="right-side">
                                 <div class="contant-side contant-side-description">
-                                    <p class="small-title">Род занятия</p>
-                                    <p>Отельный бизнес</p>
-                                    <p class="small-title">Задача проекта</p>
-                                    <p>Дизайн, разработка,<br>наполнени, Сео</p>
-                                    <p class="small-title">Клиент</p>
-                                    <p>Хозяйка Натальи</p>
-                                    <a href="#"><i class="fa fa-link" aria-hidden="true"></i>www.hotelnord.ru</a>
+                                    <?php echo $information; ?>
                                 </div>
                             </div>
+                            <?php } ?>
                         </div>
-
+                        
+                        <?php if(!empty($block_a) || !empty($block_b) || !empty($block_c) || !empty($block_d)){ ?>
                         <div class="two-halves-block two-halves-block-half">
                             <div class="right-side">
+                                <?php if(!empty($block_a)){ ?>
                                 <div class="left-top dark-gray">
-                                    <img src="images/link-14.png" alt="">
-                                    Адаптивный дизайн
+                                    <?php echo html_entity_decode( $block_a ); ?>
                                 </div>
+                                <?php } ?>
+                                <?php if(!empty($block_b)){ ?>
                                 <div class="top-right light-gray ">
-                                    <img src="images/link-15.png" alt="">
-                                    Брэндинг
+                                    <?php echo html_entity_decode( $block_b ); ?>
                                 </div>
+                                <?php } ?>
                             </div>
                             <div class="left-side bottom-line">
+                                <?php if(!empty($block_c)){ ?>
                                 <div class="left-top dark-gray">
-                                    <img src="images/link-11.png" alt="">
-                                    Верстка
+                                    <?php echo html_entity_decode( $block_c ); ?>
                                 </div>
+                                <?php } ?>
+                                <?php if(!empty($block_d)){ ?>
                                 <div class="top-right light-gray ">
-                                    <img src="images/link-16.png" alt="">
-                                    Фронт-энд
+                                    <?php echo html_entity_decode( $block_d ); ?>
                                 </div>
+                                <?php } ?>
                             </div>
                         </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="container-fluid desctop-mobile-block">
+        
+        <?php if(!empty($preview)){ ?>
+        <div class="container-fluid desctop-mobile-block" style="background-color: <?php echo $color; ?>">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="block-photo">
-                            <img class="desctop-photo" src="images/desctop.png" alt="">
-                            <img class="mobile-photo" src="images/mobile.png" alt="">
+                            <?php echo $preview; ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <?php } ?>
+        
         <div class="container-fluid design-block">
             <div class="container">
                 <div class="row">

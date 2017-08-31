@@ -188,18 +188,71 @@ function getNextGallery($post_id, $meta_key){
 }
 
 //Вывод картинок из произвольных полей для всех страниц сайта
-function getImage($meta_key){
+function getImage($meta_key, $no_image = false){
 	global $wpdb;
+	
+	switch($no_image){
+		case 'big':
+			$no_image = '<img src="' . esc_url( get_template_directory_uri() ) . '/images/no-image.png">';
+		break;
+		case 'small':
+			$no_image = '<img src="' . esc_url( get_template_directory_uri() ) . '/images/no-projects-image.png">';
+		break;
+	}
 	
 	$value = $wpdb->get_var( $wpdb->prepare("SELECT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_id DESC LIMIT 1" , $meta_key));
 	
+	$link = $wpdb->get_var( $wpdb->prepare("SELECT guid FROM $wpdb->postmeta JOIN $wpdb->posts ON %s = ID AND meta_key = %d ORDER BY meta_id DESC LIMIT 1", $value, $meta_key));
+	
+	$post_id = $wpdb->get_var( $wpdb->prepare("SELECT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_id DESC LIMIT 1" , $meta_key));
+	
+	$attachment = get_post( $post_id );
+	
+	$alt = get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true );
+	
 	if(!empty($value)){
-		$image = '<img src="' . $wpdb->get_var( $wpdb->prepare("SELECT guid FROM $wpdb->postmeta JOIN $wpdb->posts ON %s = ID AND meta_key = %d ORDER BY meta_id DESC LIMIT 1", $value, $meta_key)) . '" >';
+		$image = '<img src="' . $link . '" alt="' . $alt . '">';
+	}elseif($no_image){
+		$image = $no_image;
 	}else{
-		$image = '<img src="' . esc_url( get_template_directory_uri() ) . '/images/no-image.png">';
+		$image = '';
 	}
 	
 	return $image;
+}
+
+//Вывод картинок из произвольных полей в цикле для всех страниц сайта
+function getImageCourse($post_id, $meta_key, $no_image = false){
+	global $wpdb;
+	
+	switch($no_image){
+		case 'big':
+			$no_image = '<img src="' . esc_url( get_template_directory_uri() ) . '/images/no-image.png">';
+		break;
+		case 'small':
+			$no_image = '<img src="' . esc_url( get_template_directory_uri() ) . '/images/no-projects-image.png">';
+		break;
+	}
+	
+	$value = get_post_meta( $post_id, $meta_key, $single = true );
+	
+	$link = $wpdb->get_var( $wpdb->prepare("SELECT guid FROM $wpdb->posts WHERE ID = %s", $value));
+	
+	$post_id = $wpdb->get_var( $wpdb->prepare("SELECT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_id DESC LIMIT 1" , $meta_key));
+	
+	$attachment = get_post( $post_id );
+	
+	$alt = get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true );
+	
+	if(!empty($value)){
+		$image = '<img src="' . $link . '" alt="' . $alt . '">';
+	}elseif($no_image){
+		$image = $no_image;
+	}else{
+		$image = '';
+	}
+	
+	return $image;	
 }
 
 //Вывод id категории
@@ -209,6 +262,31 @@ function getCurrentCatID(){
 		$cat_ID = get_query_var('cat');
 	}
 	return $cat_ID;
+}
+
+/**********************************************************************************************************************************************************
+***********************************************************************************************************************************************************
+*******************************************************************SEO PATH FOR IMAGE**********************************************************************
+***********************************************************************************************************************************************************
+***********************************************************************************************************************************************************/
+function getAltImage($meta_key){
+	global $wpdb;
+	
+	$post_id = $wpdb->get_var( $wpdb->prepare("SELECT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_id DESC LIMIT 1" , $meta_key));
+	
+	$attachment = get_post( $post_id );
+	
+	return get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true );
+}
+
+function getTitleImage($meta_key){
+	global $wpdb;
+	
+	$post_id = $wpdb->get_var( $wpdb->prepare("SELECT meta_value FROM $wpdb->postmeta WHERE meta_key = %s ORDER BY meta_id DESC LIMIT 1" , $meta_key));
+	
+	$attachment = get_post( $post_id );
+	
+	return $attachment->post_title;
 }
 
 /**********************************************************************************************************************************************************
