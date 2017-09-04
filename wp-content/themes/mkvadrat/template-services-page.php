@@ -89,22 +89,4 @@ get_header();
 
     <!-- end main-services -->
     
-<script type="text/javascript">
-//форма обратной связи
-function SendShort() {
-	var data = {
-		'action': 'SendShort',
-		'email' : $('#email').val(),
-	};
-	$.ajax({
-		url:'http://' + location.host + '/wp-admin/admin-ajax.php',
-		data:data,
-		type:'POST',
-		success:function(data){
-			swal(data.message);
-		}
-	});
-};
-</script>
-  
 <?php get_footer(); ?>

@@ -28,6 +28,37 @@ get_header();
         $designing_block_a = html_entity_decode( get_post_meta( get_the_ID(), 'a_designing_block_projects_page', $single = true ));
         $designing_block_b = html_entity_decode( get_post_meta( get_the_ID(), 'b_designing_block_projects_page', $single = true ));
         $designing_block_c = html_entity_decode( get_post_meta( get_the_ID(), 'c_designing_block_projects_page', $single = true ));
+        $block_sheme_color = get_post_meta( get_the_ID(), 'block_sheme_color_projects_page', $single = true );
+        $block_sheme = get_post_meta( get_the_ID(), 'block_sheme_projects_page', $single = true );
+        $design = html_entity_decode( get_post_meta( get_the_ID(), 'title_text_design_block_projects_page', $single = true ));
+        $design_block_a = html_entity_decode( get_post_meta( get_the_ID(), 'a_design_block_projects_page', $single = true ));
+        $design_color_block_a = html_entity_decode( get_post_meta( get_the_ID(), 'a_color_design_block_projects_page', $single = true ));
+        $design_block_b = html_entity_decode( get_post_meta( get_the_ID(), 'b_design_block_projects_page', $single = true ));
+        $design_color_block_b = html_entity_decode( get_post_meta( get_the_ID(), 'b_color_design_block_projects_page', $single = true ));
+        $design_block_c = html_entity_decode( get_post_meta( get_the_ID(), 'c_design_block_projects_page', $single = true ));
+        $design_block_d = html_entity_decode( get_post_meta( get_the_ID(), 'd_design_block_projects_page', $single = true ));
+        $design_block_e = html_entity_decode( get_post_meta( get_the_ID(), 'e_design_block_projects_page', $single = true ));
+        $design_block_f = html_entity_decode( get_post_meta( get_the_ID(), 'f_design_block_projects_page', $single = true ));
+        $enable_collage = get_post_meta( get_the_ID(), 'enable_collage_projects_page', $single = true );
+        $collage_a = getImage('collage_a_projects_page', 'big');
+        $collage_b = getImage('collage_b_projects_page', 'big');
+        $collage_c = getImage('collage_c_projects_page', 'big');
+        $collage_d = getImage('collage_d_projects_page', 'big');
+        $collage_e = getImage('collage_e_projects_page', 'big');
+        $collage_f = getImage('collage_f_projects_page', 'big');
+        $collage_g = getImage('collage_g_projects_page', 'big');
+        $collage_h = getImage('collage_h_projects_page', 'big');
+        $develop = html_entity_decode( get_post_meta( get_the_ID(), 'title_text_develop_block_projects_page', $single = true ));
+        $develop_block_a = html_entity_decode( get_post_meta( get_the_ID(), 'a_develop_block_projects_page', $single = true ));
+        $develop_block_b = html_entity_decode( get_post_meta( get_the_ID(), 'b_develop_block_projects_page', $single = true ));
+        $develop_block_c = html_entity_decode( get_post_meta( get_the_ID(), 'c_develop_block_projects_page', $single = true ));
+        $develop_block_d = html_entity_decode( get_post_meta( get_the_ID(), 'd_develop_block_projects_page', $single = true ));
+        $develop_block_e = html_entity_decode( get_post_meta( get_the_ID(), 'e_develop_block_projects_page', $single = true ));
+        $develop_block_f = html_entity_decode( get_post_meta( get_the_ID(), 'f_develop_block_projects_page', $single = true ));
+        $develop_block_g = html_entity_decode( get_post_meta( get_the_ID(), 'g_develop_block_projects_page', $single = true ));
+        $photo_author = getImage('photo_author_reviews_text_projects_page', 'small');
+        $author = html_entity_decode( get_post_meta( get_the_ID(), 'author_reviews_text_projects_page', $single = true ));
+        $reviews = html_entity_decode( get_post_meta( get_the_ID(), 'reviews_text_projects_page', $single = true ));
     ?>
     
     <main class="main-works-in">
@@ -50,7 +81,7 @@ get_header();
                                     <?php echo $description; ?>
                                 </div>
                             </div>
-                            <?php if(!empty($information)){ ?>
+                            <?php if($information){ ?>
                             <div class="right-side">
                                 <div class="contant-side contant-side-description">
                                     <?php echo $information; ?>
@@ -59,27 +90,27 @@ get_header();
                             <?php } ?>
                         </div>
                         
-                        <?php if(!empty($block_a) || !empty($block_b) || !empty($block_c) || !empty($block_d)){ ?>
+                        <?php if($block_a || $block_b || $block_c || $block_d){ ?>
                         <div class="two-halves-block two-halves-block-half">
                             <div class="right-side">
-                                <?php if(!empty($block_a)){ ?>
+                                <?php if($block_a){ ?>
                                 <div class="left-top dark-gray">
                                     <?php echo html_entity_decode( $block_a ); ?>
                                 </div>
                                 <?php } ?>
-                                <?php if(!empty($block_b)){ ?>
+                                <?php if($block_b){ ?>
                                 <div class="top-right light-gray ">
                                     <?php echo html_entity_decode( $block_b ); ?>
                                 </div>
                                 <?php } ?>
                             </div>
                             <div class="left-side bottom-line">
-                                <?php if(!empty($block_c)){ ?>
+                                <?php if($block_c){ ?>
                                 <div class="left-top dark-gray">
                                     <?php echo html_entity_decode( $block_c ); ?>
                                 </div>
                                 <?php } ?>
-                                <?php if(!empty($block_d)){ ?>
+                                <?php if($block_d){ ?>
                                 <div class="top-right light-gray ">
                                     <?php echo html_entity_decode( $block_d ); ?>
                                 </div>
@@ -92,7 +123,7 @@ get_header();
             </div>
         </div>
         
-        <?php if(!empty($preview)){ ?>
+        <?php if($preview){ ?>
         <div class="container-fluid desctop-mobile-block" style="background-color: <?php echo $color; ?>">
             <div class="container">
                 <div class="row">
@@ -106,18 +137,18 @@ get_header();
         </div>
         <?php } ?>
         
-        <?php if(!empty($designing) || !empty($designing_link_block) || !empty($designing_block_a) || !empty($designing_block_b) || !empty($designing_block_c)){ ?>
+        <?php if($designing || $designing_link_block || $designing_block_a || $designing_block_b || $designing_block_c){ ?>
         <div class="container-fluid design-block">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="two-halves-block">
-                            <?php if(!empty($designing)){ ?>
+                            <?php if($designing){ ?>
                             <div class="left-side">
                                 <?php echo $designing; ?>
                             </div>
                             <?php } ?>
-                            <?php if(!empty($designing_link_block) || !empty($designing_block_a)){ ?>
+                            <?php if($designing_link_block || $designing_block_a){ ?>
                             <div class="right-side">
                                 <?php echo $designing_link_block; ?>
                                 <div class="gray-dark-bg bottom-right">
@@ -127,7 +158,7 @@ get_header();
                             <?php } ?>
                         </div>
                         
-                        <?php if(!empty($designing_block_b) || !empty($designing_block_c)){ ?>
+                        <?php if($designing_block_b || $designing_block_c){ ?>
                         <div class="line-blocks">
                             <div class="left-side">
                                 <div class="empty-block right"></div>
@@ -148,25 +179,27 @@ get_header();
         </div>
         <?php } ?>
 
-        <div class="container-fluid outline">
+        <?php if($block_sheme){ ?>
+        <div class="container-fluid outline" style="background-color: <?php echo $block_sheme_color; ?>">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <img src="images/outline.png" alt="">
+                        <?php echo $block_sheme; ?>
                     </div>
                 </div>
             </div>
         </div>
-
+        <?php } ?>
+        
+        <?php if($design || $design_block_a || $design_block_b || $design_block_c || $design_block_d || $design_block_e || $design_block_f){ ?>
         <div class="container-fluid design">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
+                        <?php if($design){ ?>
                         <div class="two-halves-block">
                             <div class="left-side">
-                                <p class="title-dash">Дизайн</p>
-                                <p class="title">Любая система с которой взаимодействует пользователь должна быть отзывчева</p>
-                                <p>Отзывчивы и человеко-понятный, логичный дизайн – это огромный шаг на встречу Вашим будущим клиентам! Каждый клиент хочет видить только тчо что ему нужно и находить необходимую информацию опираясь на логические действия.</p>
+                                <?php echo $design; ?>
                             </div>
                             <div class="right-side">
                                 <div class="light-gray left-top">
@@ -177,26 +210,25 @@ get_header();
                                 </div>
                             </div>
                         </div>
+                        <?php } ?>
 
+                        <?php if($design_block_a || $design_block_b || $design_block_c || $design_block_d || $design_block_e || $design_block_f){ ?>
                         <div class="line-blocks line-blocks-color">
                             <div class="left-side">
-                                <div class="left">
-                                    <p class="title">#Основной цвет</p>
-                                    <p>#0567c6</p>
+                                <div class="left" style="background-color: <?php echo $design_color_block_a; ?>">
+                                    <?php echo $design_block_a; ?>
                                 </div>
-                                <div class="right">
-                                    <p class="title">#Дополнительный цвет</p>
-                                    <p>#3fac45</p>
+                                <div class="right" style="background-color: <?php echo $design_color_block_b; ?>">
+                                    <?php echo $design_block_b; ?>
                                 </div>
                             </div>
                             <div class="right-side">
                                 <div class="left icons">
-                                    Иконки
+                                    <?php echo $design_block_c; ?>
                                 </div>
-                                <a class="scrollto right" href="#instruments">
-                                    <img src="images/arrow.png" alt="">
-                                    Инструменты
-                                </a>
+                                <span class="scrollto right">
+                                   <?php echo $design_block_d; ?>
+                                </span>
                             </div>
                         </div>
 
@@ -205,98 +237,94 @@ get_header();
                             </div>
                             <div class="right-side">
                                 <div class="dark-gray left">
-                                    <img src="images/link-20.png" alt="">
-                                    ILLUSTRATOR
+                                    <?php echo $design_block_e; ?>
                                 </div>
                                 <div class="light-gray right">
-                                    <img src="images/link-21.png" alt="">
-                                    PHOTOSHOP
+                                    <?php echo $design_block_f; ?>
                                 </div>
                             </div>
                         </div>
-
+                        <?php } ?>
                     </div>
                 </div>
             </div>
         </div>
-
+        <?php } ?>
+        
+        <?php if($enable_collage == 'yes'){?>
         <div class="collage-block">
             <div id="card-1" class="collage-1"> 
                 <div class="front"> 
-                <img src="images/collage-7.jpg" alt="">
+                    <?php echo $collage_a; ?>
                 </div> 
                 <div class="back">
-                    <img src="images/collage-7.jpg" alt="">
+                    <?php echo $collage_b; ?>
                 </div> 
             </div>
 
             <div id="card-3" class="collage-3"> 
                 <div class="front"> 
-                    <img src="images/collage-3.jpg" alt="">
+                    <?php echo $collage_c; ?>
                 </div> 
                 <div class="back">
-                    <img src="images/collage-3.jpg" alt="">
+                    <?php echo $collage_d; ?>
                 </div> 
             </div>
 
             <div id="card-5" class="collage-5"> 
                 <div class="front"> 
-                    <img src="images/collage-5.jpg" alt="">
+                    <?php echo $collage_e; ?>
                 </div> 
                 <div class="back">
-                    <img src="images/collage-5.jpg" alt="">
+                    <?php echo $collage_f; ?>
                 </div> 
             </div>
 
             <div id="card-6" class="collage-6"> 
                 <div class="front"> 
-                    <img src="images/collage-6.jpg" alt="">
+                   <?php echo $collage_g; ?>
                 </div> 
                 <div class="back">
-                    <img src="images/collage-6.jpg" alt="">
+                    <?php echo $collage_h; ?>
                 </div> 
             </div>
         </div>
+        <?php } ?>
 
+        <?php if($develop || $develop_block_a || $develop_block_b || $develop_block_c || $develop_block_d || $develop_block_e || $develop_block_f || $develop_block_g){ ?>
         <div class="container-fluid design development-block">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
+                        <?php if($develop){ ?>
                         <div class="two-halves-block development">
                             <div class="left-side">
-                                <p class="title-dash">Разработка</p>
-                                <p class="title">Отлаженый механизм это большой труд его нужно ценить</p>
-                                <p>Прежде чем сайт попадает к пользователю, он должен по сути стать полноценным сайтом, как и человек, он должен всему научиться. На этапе программирования, путем решения поставленных задач, проблем и ошибок мы добиваемся нужного результата.</p>
+                                <?php echo $develop; ?>
                             </div>
                             <div class="right-side">
-                                <a class="scrollto bottom-left" href="#slider-block">
-                                    <img src="images/arrow.png" alt="">
-                                    Технологии
-                                </a>
+                                    <?php echo $develop_block_a; ?>
                                 <div class="empty-block bottom-right">
                                 </div>
                             </div>
                         </div>
-
+                        <?php } ?>
+                        
+                        <?php if($develop_block_b || $develop_block_c || $develop_block_d || $develop_block_e || $develop_block_f || $develop_block_g){ ?>
                         <div class="line-blocks tools">
                             <div class="left-side">
                                 <div class="left dark-gray">
-                                    <img src="images/link-22.png" alt="">
-                                    BOOTSTRAP
+                                    <?php echo $develop_block_b; ?>
                                 </div>
                                 <div class="right light-gray">
-                                    <img src="images/link-23.png" alt="">
-                                    SASS
+                                    <?php echo $develop_block_c; ?>
                                 </div>
                             </div>
                             <div class="right-side">
                                 <div class="left dark-gray">
-                                    <img src="images/link-24.png" alt="">
-                                    CSS3
+                                    <?php echo $develop_block_d; ?>
                                 </div>
                                 <div class="right light-gray">
-                                    <img src="images/link-25.png" alt="">
-                                    HTML5
+                                    <?php echo $develop_block_e; ?>
                                 </div>
                             </div>
                         </div>
@@ -306,44 +334,61 @@ get_header();
                             </div>
                             <div class="right-side">
                                 <div class="left light-gray">
-                                    <img src="images/link-26.png" alt="">
-                                    JAVASCRIPT
+                                    <?php echo $develop_block_f; ?>
                                 </div>
                                 <div class="right dark-gray">
-                                    <img src="images/link-27.png" alt="">
-                                    JQUERY
+                                    <?php echo $develop_block_g; ?>
                                 </div>
                             </div>
                         </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
         </div>
-
+        <?php } ?>
+        
+        <?php if($reviews){ ?>
         <div class="container-fluid message-block">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
-                        <blockquote>“Артем, тысячу извинений, но так как у нашего директора теперь не ограничнный по времени доступ к сайту - будут еще некоторые вопросы.<br>Номер один: Можно ли на странице бронирования впихнуть иконку "посмотрите наши акции" рядом с окном тревел-лайн? я вам могу выслать свой портрет, чтоб вы в него дротики могли кидать”</blockquote>
-
-                        <p>Наталья Хобта<br>
-                        <cite>Менеджер по всему что можно</cite></p>
+                        <?php echo $reviews; ?>
+                        <?php echo $author; ?>
                     </div>
                     <div class="col-md-6">
                         <div class="block-photo">
-                            <img src="images/portret.jpg" alt="">
+                            <?php echo $photo_author; ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <?php } ?>
+        
         <ul class="works-list">
-            <li><a href="#"><img src="images/logo-nord.png" alt=""></a></li>
-            <li><a class="active" href="#"><img src="images/logo-nord.png" alt=""></a></li>
-            <li><a class="active" href="#"><img src="images/logo-nord.png" alt=""></a></li>
-            <li><a class="active" href="#"><img src="images/logo-nord.png" alt=""></a></li>
-            <li><a class="active" href="#"><img src="images/logo-nord.png" alt=""></a></li>
+        <?php
+            $args = array(
+                'numberposts' => 5,
+                'post_type'   => 'post',
+                'orderby'     => 'date',
+                'order'       => 'DESC',
+            );
+
+            $last_projects = get_posts( $args );
+            
+            if($last_projects){
+            foreach($last_projects as $projects_list){
+                $link = get_permalink($projects_list->ID);
+                $background_color = get_post_meta( $projects_list->ID, 'background_color_projects_category', $single = true );
+                $logo = getImageCourse($projects_list->ID, 'logo_image_projects_category', 'small');
+        ?>
+        
+            <li style="background-color: <?php echo $background_color; ?>"><a href="<?php echo $link; ?>"><?php echo $logo; ?></a></li>
+        <?php } ?>
+        <?php }else{ ?>
+            <li>Проектов не найдено!</li>
+        <?php } ?>
         </ul>
 
         <div class="container-fluid want-order">
@@ -352,8 +397,8 @@ get_header();
                     <div class="col-md-12">
                         <p class="title">хотите заказать услугу?</p>
                         <div class="order-block">
-                            <input type="text" placeholder="Введите Ваш e-mail">
-                            <input type="submit" value="Заказать">
+                            <input type="text" id="email" placeholder="Введите Ваш e-mail">
+                            <input type="submit" onclick="SendShort();" value="Заказать">
                         </div>
                     </div>
                 </div>

@@ -57,7 +57,7 @@ get_header();
                                 
                                 $projects = get_posts( $args );
                                 
-                                if(!empty($projects)){
+                                if($projects){
                                 foreach( $projects as $projects_list ){
                             ?>		
                                 <li style="background-color: <?php echo get_post_meta( $projects_list->ID, 'background_color_projects_category', $single = true ); ?>">

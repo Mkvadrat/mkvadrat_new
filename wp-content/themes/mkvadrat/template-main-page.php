@@ -142,6 +142,9 @@ get_header();
         <!-- start block-description -->
 
         <!-- start collage-block -->
+        <?php $enable_collage = get_post_meta( get_the_ID(), 'enable_collage_main_page', $single = true ); ?>
+        
+        <?php if($enable_collage == 'yes'){ ?>
         <div class="collage-block">
             <div id="card-1" class="collage-1">
                 <div class="front"> 
@@ -197,7 +200,7 @@ get_header();
                 </div> 
             </div>
         </div>
-
+        <?php } ?>
         <!-- end collage-block -->
 
         <!-- start block-description-second -->
