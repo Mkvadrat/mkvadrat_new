@@ -23,7 +23,11 @@ get_header();
         $logo = getImageCourse( get_the_ID(), 'logo_image_projects_page', 'small');
         $color =  get_post_meta( get_the_ID(), 'preview_color_projects_page', $single = true );
         $preview = html_entity_decode( get_post_meta( get_the_ID(), 'preview_projects_page', $single = true ));
-        
+        $designing = html_entity_decode( get_post_meta( get_the_ID(), 'title_text_designing_block_projects_page', $single = true ));
+        $designing_link_block = html_entity_decode( get_post_meta( get_the_ID(), 'link_block_designing_block_projects_page', $single = true ));
+        $designing_block_a = html_entity_decode( get_post_meta( get_the_ID(), 'a_designing_block_projects_page', $single = true ));
+        $designing_block_b = html_entity_decode( get_post_meta( get_the_ID(), 'b_designing_block_projects_page', $single = true ));
+        $designing_block_c = html_entity_decode( get_post_meta( get_the_ID(), 'c_designing_block_projects_page', $single = true ));
     ?>
     
     <main class="main-works-in">
@@ -102,47 +106,47 @@ get_header();
         </div>
         <?php } ?>
         
+        <?php if(!empty($designing) || !empty($designing_link_block) || !empty($designing_block_a) || !empty($designing_block_b) || !empty($designing_block_c)){ ?>
         <div class="container-fluid design-block">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="two-halves-block">
+                            <?php if(!empty($designing)){ ?>
                             <div class="left-side">
-                                <p class="title-dash">Проектирование</p>
-                                <p class="title">Любой проект, любая цель начинается с мысли</p>
-                                <p>Мы собираем необходимую для работы информацию, проводим интересные беседы с клиентом и на основе проделанной работы можем понять что именно нужно клиенту.</p>
+                                <?php echo $designing; ?>
                             </div>
+                            <?php } ?>
+                            <?php if(!empty($designing_link_block) || !empty($designing_block_a)){ ?>
                             <div class="right-side">
-                                <a class="gray-lite-bg bottom-left" href="#">
-                                    <img src="images/arrow.png" alt="">
-                                    Стратегия
-                                </a>
+                                <?php echo $designing_link_block; ?>
                                 <div class="gray-dark-bg bottom-right">
-                                    <img src="images/link-17.png" alt="">
-                                    Коммуникации
+                                    <?php echo $designing_block_a; ?>
                                 </div>
                             </div>
+                            <?php } ?>
                         </div>
-
+                        
+                        <?php if(!empty($designing_block_b) || !empty($designing_block_c)){ ?>
                         <div class="line-blocks">
                             <div class="left-side">
                                 <div class="empty-block right"></div>
                             </div>
                             <div class="right-side">
                                 <div class="left bg-grey">
-                                    <img src="images/link-18.png" alt="">
-                                    Наброски
+                                    <?php echo $designing_block_b; ?>
                                 </div>
                                 <div class="right bg-white">
-                                    <img src="images/link-19.png" alt="">
-                                    Схемы
+                                    <?php echo $designing_block_c; ?>
                                 </div>
                             </div>
                         </div>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
         </div>
+        <?php } ?>
 
         <div class="container-fluid outline">
             <div class="container">
