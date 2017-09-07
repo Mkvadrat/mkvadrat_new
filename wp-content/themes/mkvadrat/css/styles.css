@@ -3838,3 +3838,125 @@ textarea:focus:-ms-input-placeholder {
 /*--------------------------------------------------------*/
 
 /*# sourceMappingURL=styles.css.map */
+
+/*--------------------------------------------------------*/
+/*------------------ start main-page-404 -----------------*/
+/*--------------------------------------------------------*/
+.main-page-404 {
+  min-height: 500px;
+  height: auto;
+  padding: 90px 0;
+}
+
+.main-page-404 p {
+  padding-bottom: 35px;
+  font-family: "robotoslabregular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #000;
+}
+
+.main-page-404 .title {
+  padding-bottom: 20px;
+  font-family: "robotoslabregular";
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #000;
+}
+
+.main-page-404 .button {
+  display: inline-block;
+  padding: 13px 30px;
+  background-color: #cb0000;
+  text-align: center;
+  text-decoration: underline;
+  font-family: "robotoslabregular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #e58080;
+}
+
+.main-page-404 .button:hover {
+  text-decoration: none;
+}
+
+/*--------------------------------------------------------*/
+/*------------------- end main-page-404 ------------------*/
+/*--------------------------------------------------------*/
+/*--------------------------------------------------------*/
+/*------------------ start main-standart -----------------*/
+/*--------------------------------------------------------*/
+.main-standart {
+  padding: 40px 0;
+}
+
+.main-standart p {
+  padding-bottom: 35px;
+  font-family: "robotoslabregular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #000;
+}
+
+.main-standart .title {
+  padding-bottom: 20px;
+  font-family: "robotoslabregular";
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #000;
+}
+
+.main-standart .button {
+  display: inline-block;
+  padding: 13px 30px;
+  background-color: #cb0000;
+  text-align: center;
+  text-decoration: underline;
+  font-family: "robotoslabregular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #e58080;
+}
+
+.main-standart .button:hover {
+  text-decoration: none;
+}
+
+.main-standart .title-dash {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 30px;
+  font-family: "robotoslabregular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #000;
+  text-transform: uppercase;
+}
+
+.main-standart .title-dash::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 3px;
+  height: 16px;
+  right: -8px;
+  top: 8px;
+  margin-top: -6px;
+  background-color: #cb0000;
+}
+
+.main-standart img {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+/*--------------------------------------------------------*/
+/*------------------- end main-standart ------------------*/
+/*--------------------------------------------------------*/
