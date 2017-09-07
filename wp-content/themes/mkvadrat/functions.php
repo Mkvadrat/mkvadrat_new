@@ -255,6 +255,25 @@ function getImageCourse($post_id, $meta_key, $no_image = false){
 	return $image;	
 }
 
+//Вывод связанных данных для single.php
+function getProductsMeta($post_id, $meta_key){
+	global $wpdb;
+	
+	$value = array();
+
+	$serialized_object = $wpdb->get_results( $wpdb->prepare("SELECT meta_value FROM $wpdb->postmeta WHERE post_id = %s AND meta_key = %s", $post_id, $meta_key) );
+	
+	$unserialized_object = unserialize($serialized_object[0]->meta_value);
+	
+	if($unserialized_object){
+		foreach($unserialized_object as $post_id){
+			$value[] = get_post( $post_id );
+		}
+	}
+	
+	return $value;
+}
+
 //Вывод id категории
 function getCurrentCatID(){
 	global $wp_query;
@@ -343,6 +362,61 @@ function true_post_type_reviews( $reviews ) {
 	 return $reviews;
 }
 add_filter( 'post_updated_messages', 'true_post_type_reviews' );
+
+/**********************************************************************************************************************************************************
+***********************************************************************************************************************************************************
+*****************************************************************РАЗДЕЛ "РАЗРАБОТЧИКИ" В АДМИНКЕ***********************************************************
+***********************************************************************************************************************************************************
+***********************************************************************************************************************************************************/
+//Вывод в админке раздела разработчики
+function register_post_type_developers() {
+ 	$labels = array(
+	 'name' => 'Разработчики',
+	 'singular_name' => 'Разработчики',
+	 'add_new' => 'Добавить статью',
+	 'add_new_item' => 'Добавить новую статью',
+	 'edit_item' => 'Редактировать статью',
+	 'new_item' => 'Новая статью',
+	 'all_items' => 'Все статьи',
+	 'view_item' => 'Просмотр статей на сайте',
+	 'search_items' => 'Искать статьи',
+	 'not_found' => 'Статьи не найден.',
+	 'not_found_in_trash' => 'В корзине нет статей.',
+	 'menu_name' => 'Разработчики'
+	 );
+	 $args = array(
+		 'labels' => $labels,
+		 'public' => true,
+		 'exclude_from_search' => false,
+		 'show_ui' => true,
+		 'has_archive' => false,
+		 'menu_icon' => 'dashicons-universal-access',
+		 'menu_position' => 5,
+		 'supports' =>  array('title','editor', 'thumbnail'),
+	 );
+ 	register_post_type('developers', $args);
+}
+add_action( 'init', 'register_post_type_developers' );
+
+function true_post_type_developers( $developers ) {
+	 global $post, $post_ID;
+
+	 $developers['developers'] = array(
+			 0 => '',
+			 1 => sprintf( 'Статьи обновлены. <a href="%s">Просмотр</a>', esc_url( get_permalink($post_ID) ) ),
+			 2 => 'Статьи обновлёны.',
+			 3 => 'Статья удалёна.',
+			 4 => 'Статья обновлена.',
+			 5 => isset($_GET['revision']) ? sprintf( 'Статья восстановлена из редакции: %s', wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+			 6 => sprintf( 'Статья опубликована на сайте. <a href="%s">Просмотр</a>', esc_url( get_permalink($post_ID) ) ),
+			 7 => 'Отзыв сохранен.',
+			 8 => sprintf( 'Отправлен на проверку. <a target="_blank" href="%s">Просмотр</a>', esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+			 9 => sprintf( 'Запланирован на публикацию: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Просмотр</a>', date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
+			 10 => sprintf( 'Черновик обновлён. <a target="_blank" href="%s">Просмотр</a>', esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+	 );
+	 return $developers;
+}
+add_filter( 'post_updated_messages', 'true_post_type_developers' );
 
 /**********************************************************************************************************************************************************
 ***********************************************************************************************************************************************************
