@@ -13,13 +13,15 @@ get_header();
 ?>
 
     <!-- Дата атрибуты у блока ниже для паралакса фона -->
-
+    <?php
+        $header = html_entity_decode( get_post_meta( get_the_ID(), 'primary_title_services_page', $single = true ));
+    ?>
+    
     <div class="container-fluid block-under-header" data-speed="5" data-type="background">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="header-title">Наши услуги</p>
-                    <p>Если у Вас есть готовый сайт, но он не соостветствует <br>Вашим требованиям, мы поможем его доработать</p>
+                    <?php echo $header; ?>
                 </div>
             </div>
         </div>

@@ -13,6 +13,7 @@ get_header();
  
     <!-- start main-works-in -->
     <?php
+        $header = html_entity_decode( get_post_meta( get_the_ID(), 'primary_title_projects_page', $single = true ));
         $image = getImageCourse( get_the_ID(), 'main_image_projects_page', 'big');
         $description = html_entity_decode( get_post_meta( get_the_ID(), 'description_area_projects_page', $single = true ));
         $information = html_entity_decode( get_post_meta( get_the_ID(), 'information_projects_page', $single = true ));
@@ -60,6 +61,18 @@ get_header();
         $author = html_entity_decode( get_post_meta( get_the_ID(), 'author_reviews_text_projects_page', $single = true ));
         $reviews = html_entity_decode( get_post_meta( get_the_ID(), 'reviews_text_projects_page', $single = true ));
     ?>
+    
+    <!-- Дата атрибуты у блока ниже для паралакса фона -->
+
+    <div class="container-fluid block-under-header" data-speed="5" data-type="background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <?php echo $header; ?>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <main class="main-works-in">
 

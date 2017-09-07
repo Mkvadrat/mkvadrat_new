@@ -11,6 +11,15 @@ Version: 1.0
 get_header(); 
 ?>
     
+    <div class="container-fluid block-under-header" data-speed="5" data-type="background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <!-- start main-page-404 -->
 
     <main class="main-page-404">

@@ -67,6 +67,12 @@ if ( function_exists( 'add_theme_support' ) ) {
      add_theme_support( 'post-thumbnails' );
 }
 
+//Удаляем ненужные пункты меню
+function remove_menus(){
+  remove_menu_page( 'edit-comments.php' );          //Комментарии
+}
+add_action( 'admin_menu', 'remove_menus' );
+
 //Отключение визуального редактора
 //add_filter('user_can_richedit' , create_function ('' , 'return false;') , 50 );
 

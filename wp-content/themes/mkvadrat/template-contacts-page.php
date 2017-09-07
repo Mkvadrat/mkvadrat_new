@@ -14,6 +14,7 @@ get_header();
 
     <!-- start main-contacts -->
     <?php
+        $header = html_entity_decode( get_post_meta( get_the_ID(), 'primary_title_contacts_page', $single = true ));
         $moscow = get_post_meta( get_the_ID(), 'moscow_maps_cotact_page', $single = true );
         $moscow_info = html_entity_decode( get_post_meta( get_the_ID(), 'moscow_info_cotact_page', $single = true ));
         $crimea = get_post_meta( get_the_ID(), 'crimea_maps_cotact_page', $single = true );
@@ -29,8 +30,7 @@ get_header();
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="header-title">Контактная информация</p>
-                    <p>Вы можете позвонить нам по рабочим дням с 10.00 до 18.00, <br>а так же подъехать по одному из указанных ниже адресов.</p>
+                    <?php echo $header; ?>
                 </div>
             </div>
         </div>

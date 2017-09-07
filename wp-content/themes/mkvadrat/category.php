@@ -11,6 +11,22 @@ Version: 1.0
 get_header(); 
 ?>
 
+    <!-- Дата атрибуты у блока ниже для паралакса фона -->
+    <?php
+        $term = get_queried_object();
+        $cat_id = $term->term_id;
+        $cat_description = html_entity_decode(get_option('category_'.$cat_id.'_primary_title_projects_category'));
+    ?>
+    <div class="container-fluid block-under-header" data-speed="5" data-type="background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <?php echo $cat_description; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- start main-works -->
 
     <main class="main-works">

@@ -14,6 +14,7 @@ get_header();
 
     <!-- start main-about -->
     <?php
+		$header = html_entity_decode( get_post_meta( get_the_ID(), 'primary_title_about_us_page', $single = true ));
         $title_content = html_entity_decode( get_post_meta( get_the_ID(), 'title_text_content_block_about_us_page', $single = true ));
         $lower_block = html_entity_decode( get_post_meta( get_the_ID(), 'lower_block_about_us_page', $single = true ));
         $our_family_block = html_entity_decode( get_post_meta( get_the_ID(), 'title_text_our_family_block_about_us_page', $single = true )); 
@@ -28,8 +29,7 @@ get_header();
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p class="header-title">М-квадрат это мы!</p>
-                    <p>Мы - полноценная команда разработчиков, помогающая компаниям получить преимущество в <br>области цифровой трансформации.</p>
+					<?php echo $header; ?>
                 </div>
             </div>
         </div>
