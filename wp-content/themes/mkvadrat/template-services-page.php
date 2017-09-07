@@ -12,6 +12,19 @@ Version: 1.0
 get_header(); 
 ?>
 
+    <!-- Дата атрибуты у блока ниже для паралакса фона -->
+
+    <div class="container-fluid block-under-header" data-speed="5" data-type="background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="header-title">Наши услуги</p>
+                    <p>Если у Вас есть готовый сайт, но он не соостветствует <br>Вашим требованиям, мы поможем его доработать</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- start main-services -->
 
     <main class="main-services">

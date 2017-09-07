@@ -275,8 +275,6 @@ Version: 1.0
 								}
 							?>
                         </nav>
-                        
-						<?php echo getMeta('primary_title_internal_page'); ?>
 						
                     </div>
                 </div>
