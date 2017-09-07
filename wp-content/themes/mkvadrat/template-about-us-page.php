@@ -21,6 +21,19 @@ get_header();
 		$top_first_block = html_entity_decode( get_post_meta( get_the_ID(), 'first_top_projects_block_about_us_page', $single = true ));
 		$top_second_block = html_entity_decode( get_post_meta( get_the_ID(), 'second_top_projects_block_about_us_page', $single = true )); 
     ?>
+
+    <!-- Дата атрибуты у блока ниже для паралакса фона -->
+
+    <div class="container-fluid block-under-header" data-speed="5" data-type="background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="header-title">М-квадрат это мы!</p>
+                    <p>Мы - полноценная команда разработчиков, помогающая компаниям получить преимущество в <br>области цифровой трансформации.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 	
     <main class="main-about">
         

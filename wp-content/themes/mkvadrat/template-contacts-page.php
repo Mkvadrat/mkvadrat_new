@@ -22,6 +22,20 @@ get_header();
         $sevastopol_info = html_entity_decode( get_post_meta( get_the_ID(), 'sevastopol_info_cotact_page', $single = true ));
         $link = get_post_meta( get_the_ID(), 'link_first_block_contacts_page', $single = true );
     ?>
+
+    <!-- Дата атрибуты у блока ниже для паралакса фона -->
+
+    <div class="container-fluid block-under-header" data-speed="5" data-type="background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="header-title">Контактная информация</p>
+                    <p>Вы можете позвонить нам по рабочим дням с 10.00 до 18.00, <br>а так же подъехать по одному из указанных ниже адресов.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <main class="main-contacts">
 
         <div class="container">
