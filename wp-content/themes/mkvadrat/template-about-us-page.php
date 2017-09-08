@@ -77,9 +77,10 @@ get_header();
                         </li>
                         <?php } ?>
                     </ul>
-                        <?php }else{ ?>
-                        <p class="name">Разработчиков не найдено!</p>
-                        <?php } ?>
+					<?php wp_reset_postdata(); ?>
+					<?php }else{ ?>
+					<p class="name">Разработчиков не найдено!</p>
+					<?php } ?>
                 </div>
             </div>
         </div>

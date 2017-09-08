@@ -399,6 +399,7 @@ get_header();
         
             <li style="background-color: <?php echo $background_color; ?>"><a href="<?php echo $link; ?>"><?php echo $logo; ?></a></li>
         <?php } ?>
+		<?php wp_reset_postdata(); ?>
         <?php }else{ ?>
             <li>Проектов не найдено!</li>
         <?php } ?>

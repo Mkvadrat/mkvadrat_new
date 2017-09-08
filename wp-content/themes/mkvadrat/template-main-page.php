@@ -229,25 +229,18 @@ get_header();
 			</div>
 		</div>
         
-    <!-- Вывод отзывов в шаблон -->
-
-							<div>
-                                <div class="container-reviews">
-                                    <p><?php echo $review_list->post_content; ?></p>
-                                    <img src="<?php $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($review_list->ID), 'full'); echo $image_url[0]; ?>" alt="<?php echo get_post_meta( get_post_thumbnail_id($review_list->ID), '_wp_attachment_image_alt', true ); ?>">
-                                    <p><?php echo $review_list->post_title; ?></p>
-                                    <p><?php echo get_post_meta( $review_list->ID, 'position_held_review_main_page', $single = true ); ?>, <?php echo get_post_meta( $review_list->ID, 'city_review_main_page', $single = true ); ?></p>
-                                </div>
-                           	</div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-	<!-- Вывод отзывов в шаблон -->
-
+		<?php
+			$args = array(
+				'numberposts' => 0,
+				'post_type'   => 'reviews',
+				'orderby'     => 'date',
+				'order'       => 'DESC',
+			);
+		
+			$review = get_posts( $args );
+			
+			if($review){
+		?>
         <div class="container-fluid reviews-slider-block">
             <div class="container">
                 <div class="row">
@@ -255,16 +248,7 @@ get_header();
                         <p class="title">Отзывы клиентов</p>
 
                         <div class="owl-carousel owl-theme reviews-slider">
-                            <?php
-                                $args = array(
-                                    'numberposts' => 0,
-                                    'post_type'   => 'reviews',
-                                    'orderby'     => 'date',
-                                    'order'       => 'DESC',
-                                );
-                            
-                                $review = get_posts( $args );
-                            
+							<?php
                                 foreach($review as $review_list){
                                     $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($review_list->ID), 'full');
                                     $alt = get_post_meta( get_post_thumbnail_id($review_list->ID), '_wp_attachment_image_alt', true );
@@ -282,12 +266,13 @@ get_header();
                                 </div>
                             </div>
                             <?php } ?>
+							<?php wp_reset_postdata(); ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+		<?php } ?>
         <!-- end block-description-second -->
 
     </main>

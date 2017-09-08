@@ -52,6 +52,7 @@ get_header();
                                     }
                                 } 
                             ?>
+							<?php wp_reset_postdata(); ?>
                         </ul>
                     </div>
                 </div>
