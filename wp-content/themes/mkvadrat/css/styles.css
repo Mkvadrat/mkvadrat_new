@@ -292,7 +292,8 @@ textarea:focus:-ms-input-placeholder {
 .two-halves-block .left-side div {
   position: absolute;
   display: block;
-  width: 236px;
+  width: 50%;
+  /*width: 236px;*/
   height: 240px;
   text-align: center;
   background-color: #cb0000;
@@ -461,7 +462,8 @@ textarea:focus:-ms-input-placeholder {
 .two-halves-block .right-side div {
   position: absolute;
   display: block;
-  width: 236px;
+  width: 50%;
+  /*width: 236px;*/
   height: 240px;
   text-align: center;
   background-color: #cb0000;
@@ -2583,8 +2585,8 @@ textarea:focus:-ms-input-placeholder {
   height: 150px;
   border: none;
   background: url("../images/about-1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
 }
 
 .main-about .we-do-block ul li:nth-child(2) {
@@ -3985,3 +3987,44 @@ textarea:focus:-ms-input-placeholder {
 /*--------------------------------------------------------*/
 /*------------------- end main-standart ------------------*/
 /*--------------------------------------------------------*/
+
+.menu-button {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  text-align: center;
+}
+
+.menu-button i {
+  color: #FFF;
+  font-size: 26px;
+}
+
+.paggination {
+  padding: 20px 0;
+}
+
+.paggination li {
+  float: left !important;
+  width: auto !important;
+  margin-right: 20px !important;
+}
+
+.paggination li:last-child {
+  margin-right: 0 !important;
+}
+
+.paggination li a,
+.paggination li span {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 10px;
+  font-family: "robotoslabregular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #000;
+}

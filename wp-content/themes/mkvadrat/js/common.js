@@ -122,4 +122,23 @@ $(document).ready(function() {
      });    
     });
 
+
+    // MENU BUTTON
+
+    $(".menu-button").click(function() {
+        $(".nav-header .menu-items").slideToggle();
+    });
+
+    $(".menu-button-fixed").click(function() {
+        $(".fixed-menu .main-list").slideToggle();
+    });
+
+    $(".menu-button").click(function() {
+        $(".header-other-pages .nav-header .right-side").slideToggle();
+    });
+
+    $(".menu-button-fixed").click(function() {
+        $(".header-other-pages .fixed-menu .other-list").slideToggle();
+    });
+
 });

@@ -49,7 +49,7 @@ Version: 1.0
     <!-- FANCYBOX -->
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
     <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-    <script src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/jquery.mousewheel-3.0.6.pack.js"></script>
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
     <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
     <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
@@ -94,6 +94,7 @@ Version: 1.0
 					/>
 				</a>
                 <button><i class="fa fa-bars" aria-hidden="true"></i></button>
+                <button type="button" class="menu-button-fixed hidden-sm hidden-md hidden-lg"><i class="fa fa-bars" aria-hidden="true"></i></button>
 				<?php
 					if (has_nav_menu('hidden_menu')){
 						wp_nav_menu( array(
@@ -110,7 +111,7 @@ Version: 1.0
 							'after'           => '',
 							'link_before'     => '',
 							'link_after'      => '',
-							'items_wrap'      => '<ul>%3$s</ul>',
+							'items_wrap'      => '<ul class="main-list">%3$s</ul>',
 							'depth'           => 1,
 							'walker'          => '',
 						) );
@@ -129,6 +130,8 @@ Version: 1.0
                             />
 						</a>
                         <nav class="nav-header">
+                        	<button type="button" class="menu-button hidden-sm hidden-md hidden-lg"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                        	<div class="menu-items">
 							<?php
 								if (has_nav_menu('left_menu')){
 									wp_nav_menu( array(
@@ -173,6 +176,7 @@ Version: 1.0
 									) );
 								}
 							?>
+							</div>
                         </nav>
 						
 						<?php echo getMeta('primary_title_main_page'); ?>
@@ -207,7 +211,7 @@ Version: 1.0
 	<!-- start header -->
     <header class="header header-other-pages">
         <div class="container-fluid">
-            <div class="fixed-menu">
+            <div class="fixed-menu fixed-menu">
 				<a class="logo-2" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<img
 					  src="<?php header_image(); ?>"
@@ -217,6 +221,7 @@ Version: 1.0
 					/>
 				</a>
                 <button><i class="fa fa-bars" aria-hidden="true"></i></button>
+                <button type="button" class="menu-button-fixed hidden-sm hidden-md hidden-lg"><i class="fa fa-bars" aria-hidden="true"></i></button>
 				<?php
 					if (has_nav_menu('hidden_menu')){
 						wp_nav_menu( array(
@@ -233,7 +238,7 @@ Version: 1.0
 							'after'           => '',
 							'link_before'     => '',
 							'link_after'      => '',
-							'items_wrap'      => '<ul>%3$s</ul>',
+							'items_wrap'      => '<ul class="other-list">%3$s</ul>',
 							'depth'           => 1,
 							'walker'          => '',
 						) );
@@ -274,6 +279,7 @@ Version: 1.0
 									) );
 								}
 							?>
+							<button type="button" class="menu-button hidden-sm hidden-md hidden-lg"><i class="fa fa-bars" aria-hidden="true"></i></button>
                         </nav>
 						
                     </div>
