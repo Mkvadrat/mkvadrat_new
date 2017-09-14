@@ -8,6 +8,23 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
 
+	.main-works-in .development .right-side {
+		display: block !important;
+	}
+
+	.main-works-in .design .two-halves-block .right-side {
+		display: none;
+	}
+
+	.main-works-in .desctop-mobile-block .block-photo .mobile-photo {
+		width: 27%;
+	}
+
+	.main-works-in .big-photo-project .block-photo-project .logo-project {
+		  width: 160px;
+ 		  height: 160px;
+	}
+
 	.main-contacts .two-halves-block .right-side .block-map-top-right,
 	.main-contacts .two-halves-block .right-side .block-map-top-left {
 		position: relative;
@@ -188,10 +205,31 @@
 	.main-services .bg-blue .two-halves-block .left-side.bottom-line {
     	padding: 260px 50px 25px 50px;
     }
+
+    .main-works-in .design .line-blocks-color .right-side .scrollto {
+    	width: 50%;
+    }
 }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
+
+	.main-works-in .design .line-blocks-color {
+		height: auto;
+	}
+
+	.main-works-in .design .line-blocks-color .right-side,
+	.main-works-in .design .line-blocks-color .left-side,
+	.main-works-in .development .right-side {
+		width: 100%;
+		height: 240px;
+	}
+
+	.main-works-in .design .line-blocks-color .right-side div,
+	.main-works-in .design .line-blocks-color .left-side div,
+	.main-works-in .design .line-blocks-color .right-side span {
+		height: 240px;
+	}
 
 	.main-about .links-list li {
 		width: 50%;
@@ -291,12 +329,18 @@
 		overflow: hidden;
 	}
 
-	.main-index .block-description .how-we-work .left-side {
+	.main-index .block-description .how-we-work .left-side,
+	.main-works-in .big-photo-project .two-halves-block .left-side {
 		padding: 40px 20px;
 	}
 
+	.main-works-in .big-photo-project .two-halves-block .right-side .contant-side.contant-side-description {
+		padding: 0 20px 40px 20px;
+	}
+
 	.main-index .square-links,
-	.main-index .block-description .how-we-work {
+	.main-index .block-description .how-we-work,
+	.main-works-in .big-photo-project .two-halves-block {
 		-webkit-flex-wrap: wrap;
 		    -ms-flex-wrap: wrap;
 		        flex-wrap: wrap;
@@ -308,7 +352,10 @@
 	.main-index .square-links .right-side,
 	.main-index .square-links .left-side,
 	.main-index .block-description .how-we-work .right-side,
-	.main-index .block-description .how-we-work .left-side {
+	.main-index .block-description .how-we-work .left-side,
+	.main-works-in .big-photo-project .two-halves-block .right-side,
+	.main-works-in .big-photo-project .two-halves-block .left-side,
+	.main-works-in .big-photo-project .two-halves-block .right-side .contant-side.contant-side-description {
 		width: 100%;
 	}
 
@@ -382,7 +429,9 @@
 	}
 
 	.main-about .two-halves-block,
-	.main-services .two-halves-block {
+	.main-services .two-halves-block,
+	.main-works-in .design-block .two-halves-block,
+	.main-works-in .design .two-halves-block {
 		-webkit-flex-wrap: wrap;
 		    -ms-flex-wrap: wrap;
 		        flex-wrap: wrap;
@@ -394,7 +443,10 @@
 	.main-about .two-halves-block .left-side,
 	.main-about .two-halves-block .right-side,
 	.main-services .two-halves-block .left-side,
-	.main-services .two-halves-block .right-side {
+	.main-services .two-halves-block .right-side,
+	.design-block .two-halves-block .left-side,
+	.design-block .two-halves-block .right-side,
+	.main-works-in .design .two-halves-block .left-side {
 		width: 100%;
 	}
 
@@ -410,8 +462,18 @@
 	}
 
 	.main-about .bg-blue .two-halves-block .left-side,
-	.main-services .two-halves-block .left-side {
+	.main-services .two-halves-block .left-side,
+	.design-block .two-halves-block .left-side,
+	.main-works-in .design .two-halves-block .left-side {
 		padding: 40px 20px;
+	}
+
+	.main-works-in .design .two-halves-block {
+		min-height: auto;
+	}
+
+	.design-block .two-halves-block .right-side {
+		height: 240px;
 	}
 
 	.main-about .bg-blue .two-halves-block .right-side {
@@ -442,10 +504,141 @@
 		padding: 20px;
 	}
 
+	.design-block .line-blocks .left-side {
+		display: none;
+	}
+
+	.design-block .line-blocks .right-side {
+		width: 100%;
+	}
+
+	.main-works-in .design .line-blocks-color + .line-blocks .left-side {
+		display: none;
+	}
+
+	.main-works-in .design .line-blocks-color + .line-blocks .right-side {
+		width: 100%;
+	}
+
+	.main-works-in .tools {
+		height: auto;
+	}
+
+	.main-works-in .tools .left-side,
+	.main-works-in .tools .right-side {
+		width: 100%;
+		height: 240px;
+	}
+
+	.main-works-in .tools + .tools .left-side {
+		display: none;
+	}
+
+	.main-works-in .message-block {
+		padding: 40px 0;
+	}
+
+	.main-works-in .message-block blockquote {
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	.main-works-in .works-list li {
+		width: 50%;
+	}
+
 }
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
+
+	.main-works-in .works-list li {
+		width: 100%;
+	}
+
+	.main-works-in .tools .left-side,
+	.main-works-in .tools .right-side {
+		height: auto;
+	}
+
+	.main-works-in .tools .left-side div,
+	.main-works-in .tools .right-side div {
+		position: relative;
+		width: 100%;
+		height: 240px;
+	}
+
+	.main-works-in .development .right-side div {
+		display: none !important;
+	}
+
+	.main-works-in .development .right-side .scrollto {
+		position: relative;
+		width: 100%;
+	}
+
+	.main-works-in .collage-block {
+		display: none;
+	}
+
+	.main-works-in .design .line-blocks-color .right-side div,
+	.main-works-in .design .line-blocks-color .left-side div,
+	.main-works-in .design .line-blocks-color .right-side span,
+	.main-works-in .design .line-blocks-color + .line-blocks .right-side div {
+		width: 100% !important;
+		position: relative !important;
+	}
+
+	.design-block .line-blocks,
+	.design-block .two-halves-block,
+	.main-works-in .design .line-blocks-color .left-side,
+	.main-works-in .design .line-blocks-color .right-side,
+	.main-works-in .design .line-blocks-color + .line-blocks {
+		min-height: auto;
+		height: auto;
+	}
+
+	.design-block .line-blocks .right-side div,
+	.main-works-in .design .line-blocks-color + .line-blocks .right-side div {
+		position: relative;
+		width: 100%;
+		height: 240px;
+	}
+
+	.design-block .two-halves-block .right-side span,
+	.design-block .two-halves-block .right-side div {
+		position: relative !important;
+		width: 100% !important;
+		overflow: hidden;
+	}
+
+	.design-block .two-halves-block .right-side {
+		height: auto;
+	}
+
+	.main-works-in .block-photo-project ~ .two-halves-block-half .right-side,
+	.main-works-in .block-photo-project ~ .two-halves-block-half .left-side {
+		height: auto;
+		padding: 0;
+	}
+
+	.main-works-in .big-photo-project .block-photo-project .logo-project,
+	.main-works-in .big-photo-project .two-halves-block-half div {
+		position: relative;
+		width: 100%;
+ 		height: 240px;
+	}
+
+	.two-halves-block .right-side div,
+	.two-halves-block .left-side div {
+		position: relative;
+		width: 100%;
+	}
+
+	.two-halves-block-half .left-side {
+    	padding: 0;
+    	height: auto;
+    }
 
 	.block-form .right-side a {
 		width: 100% !important;
@@ -464,19 +657,23 @@
 		width: 100% !important;
 	}
 
-	.main-services .want-order .order-block {
+	.main-services .want-order .order-block,
+	.main-works-in .want-order .order-block {
 		width: 100%;
 	}
 
 	.main-services .want-order .order-block input[type="text"],
-	.main-services .want-order .order-block input[type="submit"] {
+	.main-services .want-order .order-block input[type="submit"],
+	.main-works-in .want-order .order-block input[type="text"],
+	.main-works-in .want-order .order-block input[type="submit"] {
 		position: relative;
 		width: 100%;
 		top: 0;
 		right: 0;
 	}
 
-	.main-services .want-order .order-block input[type="submit"] {
+	.main-services .want-order .order-block input[type="submit"],
+	.main-works-in .want-order .order-block input[type="submit"] {
 		width: 50%;
 		margin: 0 auto;
 		margin-top: 20px;
@@ -601,6 +798,10 @@
 	.main-about .we-do-block ul li,
 	.main-about .developer-list li {
 		width: 100%;
+	}
+
+	.main-index .collage-block {
+		display: none;
 	}
 }
 

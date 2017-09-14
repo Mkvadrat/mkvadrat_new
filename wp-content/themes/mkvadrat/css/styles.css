@@ -341,9 +341,9 @@ textarea:focus:-ms-input-placeholder {
   transition: 0.5s;
 }
 
-.two-halves-block .left-side div:hover img {
+/*.two-halves-block .left-side div:hover img {
   height: 60px;
-}
+}*/
 
 .two-halves-block .right-side {
   position: relative;
@@ -511,9 +511,9 @@ textarea:focus:-ms-input-placeholder {
   transition: 0.5s;
 }
 
-.two-halves-block .right-side div:hover img {
+/*.two-halves-block .right-side div:hover img {
   height: 60px;
-}
+}*/
 
 /*--------------------------------------------------------*/
 /*--------------------- end templates --------------------*/
@@ -818,8 +818,6 @@ textarea:focus:-ms-input-placeholder {
   left: 50px;
   width: 200px;
   height: 100%;
-  border-style: dotted;
-  border-width: 0 1px;
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -830,7 +828,6 @@ textarea:focus:-ms-input-placeholder {
   left: 50%;
   width: 0;
   height: 100%;
-  border-left: 1px dotted;
 }
 
 .header .back {
@@ -1274,7 +1271,8 @@ textarea:focus:-ms-input-placeholder {
   background-attchment: fixed;
 }
 
-.block-under-header p {
+.block-under-header p,
+.block-under-header p a {
   font-family: "robotoslabregular";
   font-size: 18px;
   font-weight: 400;
@@ -1534,6 +1532,7 @@ textarea:focus:-ms-input-placeholder {
 
 .main-index .block-description .how-we-work .right-side a:hover {
   text-decoration: none;
+  color: #FFF;
 }
 
 .main-index .block-description .how-we-work .right-side a img {
@@ -1700,6 +1699,15 @@ textarea:focus:-ms-input-placeholder {
   text-decoration: none;
 }
 
+.main-index .square-links .left-side a:hover,
+.main-index .square-links .right-side a.red-bg:hover {
+  color: #fff;
+}
+
+.main-index .square-links .left-side a.white-bg:hover {
+  color: #000;
+}
+
 .main-index .square-links .left-side a img,
 .main-index .square-links .right-side a img {
   display: block;
@@ -1738,10 +1746,10 @@ textarea:focus:-ms-input-placeholder {
   color: #000;
 }
 
-.main-index .square-links .left-side a:hover img,
+/*.main-index .square-links .left-side a:hover img,
 .main-index .square-links .right-side a:hover img {
   height: 60px;
-}
+}*/
 
 .main-index .square-links .left-side a.red-bg,
 .main-index .square-links .right-side a.red-bg {
@@ -1846,7 +1854,10 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-index .collage-block {
-  background-color: #79b8ff;
+  background-image: url(../images/bg-image.jpeg) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
   position: relative;
   overflow: hidden;
 }
@@ -2117,6 +2128,7 @@ textarea:focus:-ms-input-placeholder {
 
 .main-contacts .block-form a.left-top:hover {
   text-decoration: none;
+  color: #FFF;
 }
 
 .main-contacts .block-form a.left-top img {
@@ -2196,6 +2208,7 @@ textarea:focus:-ms-input-placeholder {
 
 .main-contacts .block-form input[type="submit"]:hover {
   text-decoration: none;
+  color: #fff;
 }
 
 /*--------------------------------------------------------*/
@@ -2640,13 +2653,13 @@ textarea:focus:-ms-input-placeholder {
   background-color: #a20909;
 }
 
-.main-about .we-do-block ul li:hover p {
+/*.main-about .we-do-block ul li:hover p {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
   transform: scale(1.1);
-}
+}*/
 
 .main-about .title-dash {
   position: relative;
@@ -3028,13 +3041,13 @@ textarea:focus:-ms-input-placeholder {
   transition: 0.5s;
 }
 
-.main-about .links-list li:hover img {
+/*.main-about .links-list li:hover img {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
   transform: scale(1.1);
-}
+}*/
 
 /*--------------------------------------------------------*/
 /*--------------------- end main-about -------------------*/
@@ -3052,7 +3065,7 @@ textarea:focus:-ms-input-placeholder {
   margin-bottom: 70px;
 }
 
-.main-works-in .big-photo-project .block-photo-project .project-photo {
+.main-works-in .big-photo-project .block-photo-project img {
   width: 100%;
 }
 
@@ -3070,6 +3083,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-works-in .big-photo-project .block-photo-project .logo-project img {
+  width: auto;
   margin: auto;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
@@ -4015,10 +4029,12 @@ textarea:focus:-ms-input-placeholder {
 
 .paggination {
   padding: 20px 0;
+  text-align: center;
 }
 
 .paggination li {
-  float: left !important;
+  display: inline-block !important;
+  float: none !important;
   width: auto !important;
   margin-right: 20px !important;
 }
@@ -4032,10 +4048,14 @@ textarea:focus:-ms-input-placeholder {
   display: block !important;
   width: auto !important;
   height: auto !important;
-  padding: 10px;
+  padding: 10px 17px;
   font-family: "robotoslabregular";
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  color: #000;
+  color: #fff;
+}
+
+.paggination li span {
+  background: #cb0000;
 }
