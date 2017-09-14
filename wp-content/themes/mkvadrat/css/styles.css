@@ -4059,3 +4059,12 @@ textarea:focus:-ms-input-placeholder {
 .paggination li span {
   background: #cb0000;
 }
+
+.main-contacts .two-halves-block table a {
+  text-align: left !important;
+  background: transparent !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #000 !important;
+  text-decoration: none !important;
+}
