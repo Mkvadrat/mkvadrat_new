@@ -4119,6 +4119,10 @@ textarea:focus:-ms-input-placeholder {
   color: #838383 !important;
 }
 
+.ymaps-logo-link {
+  background: transparent !important;
+}
+
 .main-works-in .line-blocks .right-side div:hover img,
 .main-works-in .design .line-blocks-color .right-side .left:hover img,
 .main-works-in .line-blocks .left-side div:hover img {
