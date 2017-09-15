@@ -553,6 +553,11 @@ textarea:focus:-ms-input-placeholder {
   z-index: 10;
 }
 
+.header .fixed-menu .logo-2 img {
+    width: 50px;
+    height: auto;
+}
+
 .header .fixed-menu button {
   position: relative;
   float: right;
@@ -640,6 +645,7 @@ textarea:focus:-ms-input-placeholder {
 
 .header .logo {
   position: absolute;
+  top: -7px;
   left: 50%;
   margin-left: -21px;
   display: block;
@@ -1547,9 +1553,9 @@ textarea:focus:-ms-input-placeholder {
   transition: 0.5s;
 }
 
-.main-index .block-description .how-we-work .right-side a:hover img {
+/*.main-index .block-description .how-we-work .right-side a:hover img {
   height: 60px;
-}
+}*/
 
 .main-index .block-description .slider-block {
   background-color: #0772cd;
@@ -1659,7 +1665,9 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-index .square-links .left-side a,
-.main-index .square-links .right-side a {
+.main-index .square-links .right-side a,
+.main-index .square-links .left-side b,
+.main-index .square-links .right-side b {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -1691,28 +1699,38 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-index .square-links .left-side a.not-links,
-.main-index .square-links .right-side a.not-links {
+.main-index .square-links .right-side a.not-links,
+.main-index .square-links .left-side b.not-links,
+.main-index .square-links .right-side b.not-links {
   text-decoration: none;
 }
 
 .main-index .square-links .left-side a:hover,
-.main-index .square-links .right-side a:hover {
+.main-index .square-links .right-side a:hover,
+.main-index .square-links .left-side b:hover,
+.main-index .square-links .right-side b:hover {
   text-decoration: none;
 }
 
 .main-index .square-links .left-side a:hover,
-.main-index .square-links .right-side a.red-bg:hover {
+.main-index .square-links .right-side a.red-bg:hover,
+.main-index .square-links .left-side b:hover,
+.main-index .square-links .right-side b.red-bg:hover {
   color: #fff;
 }
 
-.main-index .square-links .left-side a.white-bg:hover {
+.main-index .square-links .left-side a.white-bg:hover,
+.main-index .square-links .left-side b.white-bg:hover {
   color: #000;
 }
 
 .main-index .square-links .left-side a img,
-.main-index .square-links .right-side a img {
+.main-index .square-links .right-side a img,
+.main-index .square-links .left-side b img,
+.main-index .square-links .right-side b img {
   display: block;
   height: 50px;
+  margin: auto;
   margin-bottom: 20px;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
@@ -1722,12 +1740,16 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-index .square-links .left-side a span,
-.main-index .square-links .right-side a span {
+.main-index .square-links .right-side a span,
+.main-index .square-links .left-side b span,
+.main-index .square-links .right-side b span {
   width: 100%;
 }
 
 .main-index .square-links .left-side a span.black-color,
-.main-index .square-links .right-side a span.black-color {
+.main-index .square-links .right-side a span.black-color,
+.main-index .square-links .left-side b span.black-color,
+.main-index .square-links .right-side b span.black-color {
   font-family: "robotoslabregular";
   font-size: 16px;
   font-weight: 400;
@@ -1737,7 +1759,9 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-index .square-links .left-side a i,
-.main-index .square-links .right-side a i {
+.main-index .square-links .right-side a i,
+.main-index .square-links .left-side b i,
+.main-index .square-links .right-side b i {
   width: 100%;
   padding-bottom: 5px;
   font-family: "robotoslabregular";
@@ -1753,12 +1777,16 @@ textarea:focus:-ms-input-placeholder {
 }*/
 
 .main-index .square-links .left-side a.red-bg,
-.main-index .square-links .right-side a.red-bg {
+.main-index .square-links .right-side a.red-bg,
+.main-index .square-links .left-side b.red-bg,
+.main-index .square-links .right-side b.red-bg {
   background-color: #cb0000;
 }
 
 .main-index .square-links .left-side a.white-bg,
-.main-index .square-links .right-side a.white-bg {
+.main-index .square-links .right-side a.white-bg,
+.main-index .square-links .left-side b.white-bg,
+.main-index .square-links .right-side b.white-bg {
   background-color: #fff;
 }
 
@@ -1775,11 +1803,13 @@ textarea:focus:-ms-input-placeholder {
   background-position: center center;
 }
 
-.main-index .square-links .right-side a.red-bg {
+.main-index .square-links .right-side a.red-bg,
+.main-index .square-links .right-side b.red-bg {
   background-color: #cb0000;
 }
 
-.main-index .square-links .right-side a.white-bg {
+.main-index .square-links .right-side a.white-bg,
+.main-index .square-links .right-side b.white-bg {
   background-color: #fff;
 }
 
@@ -2143,9 +2173,9 @@ textarea:focus:-ms-input-placeholder {
   transition: 0.5s;
 }
 
-.main-contacts .block-form a.left-top:hover img {
+/*.main-contacts .block-form a.left-top:hover img {
   height: 60px;
-}
+}*/
 
 .main-contacts .block-form .left-side {
   padding: 50px 30px 0px 0px;
@@ -2404,11 +2434,11 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-works .works-list ul li a:hover img {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /*.main-works .works-list ul li:nth-child(1) {
@@ -2857,6 +2887,7 @@ textarea:focus:-ms-input-placeholder {
 .main-about .bg-blue .two-halves-block .left-side a img,
 .main-about .bg-blue .two-halves-block .right-side a img {
   display: block;
+  margin: auto;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
@@ -2892,11 +2923,11 @@ textarea:focus:-ms-input-placeholder {
 
 .main-about .bg-blue .two-halves-block .left-side a:hover img,
 .main-about .bg-blue .two-halves-block .right-side a:hover img {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .main-about .bg-blue .two-halves-block .left-side a.gray-lite-bg,
@@ -2991,11 +3022,11 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-about .two-halves-block-half a:hover img {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .main-about .links-list li {
@@ -3035,6 +3066,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-about .links-list li img {
+  margin: auto;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
@@ -3094,11 +3126,11 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-works-in .big-photo-project .block-photo-project .logo-project:hover img {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .main-works-in .big-photo-project .two-halves-block {
@@ -3304,15 +3336,16 @@ textarea:focus:-ms-input-placeholder {
   transition: 0.5s;
 }
 
-.main-works-in .design-block .two-halves-block .right-side .bottom-left:hover img {
+/*.main-works-in .design-block .two-halves-block .right-side .bottom-left:hover img {
   width: 42px;
-}
+}*/
 
 .main-works-in .design-block .two-halves-block .right-side .bottom-right {
   position: absolute;
   bottom: 0;
   right: 0;
   background-color: #f6f6f6;
+  font-weight: 700;
 }
 
 .main-works-in .line-blocks {
@@ -3490,7 +3523,9 @@ textarea:focus:-ms-input-placeholder {
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
-  color: #fff;
+  color: #fff !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
 }
 
 .main-works-in .design .two-halves-block .right-side .bottom-left img {
@@ -3509,9 +3544,9 @@ textarea:focus:-ms-input-placeholder {
   transition: 0.5s;
 }
 
-.main-works-in .design .two-halves-block .right-side .bottom-left:hover img {
+/*.main-works-in .design .two-halves-block .right-side .bottom-left:hover img {
   width: 42px;
-}
+}*/
 
 .main-works-in .design .two-halves-block .right-side .bottom-right {
   position: absolute;
@@ -3581,6 +3616,7 @@ textarea:focus:-ms-input-placeholder {
   font-weight: 400;
   line-height: 18px;
   color: #fff;
+  text-transform: uppercase;
 }
 
 .main-works-in .design .line-blocks-color .right-side .scrollto img {
@@ -3594,8 +3630,8 @@ textarea:focus:-ms-input-placeholder {
   transition: 0.5s;
 }
 
-.main-works-in .design .line-blocks-color .right-side .left:hover img,
-.main-works-in .design .line-blocks-color .right-side .right:hover img {
+.main-works-in .design .line-blocks-color .right-side .left:hover img/*,
+.main-works-in .design .line-blocks-color .right-side .right:hover img*/ {
   height: 60px;
 }
 
@@ -3789,11 +3825,11 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-works-in .works-list li a:hover img {
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 /*.main-works-in .works-list li:nth-child(1) {
@@ -4014,6 +4050,10 @@ textarea:focus:-ms-input-placeholder {
 /*------------------- end main-standart ------------------*/
 /*--------------------------------------------------------*/
 
+.nav-header {
+  overflow: hidden;
+}
+
 .menu-button {
   background-color: transparent;
   width: 30px;
@@ -4021,6 +4061,7 @@ textarea:focus:-ms-input-placeholder {
   padding: 0;
   border: none;
   text-align: center;
+  float: right;
 }
 
 .menu-button i {
@@ -4068,6 +4109,14 @@ textarea:focus:-ms-input-placeholder {
   font-weight: 700 !important;
   color: #000 !important;
   text-decoration: none !important;
+}
+
+.main-works-in .big-photo-project .two-halves-block .right-side .contant-side.contant-side-description a {
+  text-align: left !important;
+  background: transparent !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: #838383 !important;
 }
 
 .main-works-in .line-blocks .right-side div:hover img,

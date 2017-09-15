@@ -552,6 +552,17 @@
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
 
+	.main-index .our-approach .our-approach-block ul li {
+		display: block;
+		width: 100%;
+		margin: 0;
+		margin-bottom: 20px;
+	}
+
+	.main-index .our-approach .our-approach-block ul li:last-child {
+		margin-bottom: 0;
+	}
+
 	.main-works-in .works-list li {
 		width: 100%;
 	}
@@ -706,7 +717,7 @@
 
 	.header .logo {
 		left: auto;
-		right: 0;
+		left: 0;
 		margin-left: 0;
 		top: -8px;
 	}
@@ -746,24 +757,31 @@
     .main-index .square-links .left-side a.white-bg,
     .main-index .square-links .right-side a.red-bg,
     .main-index .square-links .right-side a.white-bg,
+    .main-index .square-links .left-side b.red-bg,
+    .main-index .square-links .left-side b.white-bg,
+    .main-index .square-links .right-side b.red-bg,
+    .main-index .square-links .right-side b.white-bg,
     .main-index .block-description .how-we-work .right-side a.know-more {
 		width: 100%;
 		min-width: 100%;
 	}
 
-    .main-index .square-links .left-side a.white-bg {
+    .main-index .square-links .left-side a.white-bg,
+    .main-index .square-links .left-side b.white-bg {
     	-webkit-order: 1;
     	    -ms-order: 1;
     	        order: 1;
     }
 
-    .main-index .square-links .left-side a.red-bg {
+    .main-index .square-links .left-side a.red-bg,
+    .main-index .square-links .left-side b.red-bg {
     	-webkit-order: 2;
     	    -ms-order: 2;
     	        order: 2;
     }
 
-    .block-description-second .square-links .left-side a {
+    .block-description-second .square-links .left-side a,
+    .block-description-second .square-links .left-side b {
     	padding: 20px 10px;
     	height: auto;
     }

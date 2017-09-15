@@ -90,7 +90,7 @@ get_header();
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="title">хотите заказать подобный проект?</p>
+                        <p class="title">хотите заказать услугу?</p>
                         <div class="order-block">
                             <input type="text" id="email" placeholder="Введите Ваш e-mail">
                             <input type="submit" onclick="SendShort();" value="Заказать">
