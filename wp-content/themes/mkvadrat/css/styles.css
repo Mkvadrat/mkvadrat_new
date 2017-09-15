@@ -1434,7 +1434,8 @@ textarea:focus:-ms-input-placeholder {
 .main-works .works-list,
 .main-about .bg-blue,
 .main-services .bg-blue,
-.main-contacts {
+.main-contacts,
+.main-works-in {
     background-image: url(../images/bg-image.jpeg) !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
@@ -3057,7 +3058,7 @@ textarea:focus:-ms-input-placeholder {
 /*--------------------------------------------------------*/
 .main-works-in .big-photo-project {
   padding: 40px 0 0;
-  background-color: #79b8ff;
+  /*background-color: #79b8ff;*/
 }
 
 .main-works-in .big-photo-project .block-photo-project {
@@ -3221,7 +3222,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-works-in .design-block {
-  background-color: #79b8ff;
+  /*background-color: #79b8ff;*/
 }
 
 .main-works-in .design-block .two-halves-block .title-dash {
@@ -3416,7 +3417,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-works-in .design {
-  background-color: #79b8ff;
+  /*background-color: #79b8ff;*/
 }
 
 .main-works-in .design .two-halves-block .title-dash {
@@ -3607,7 +3608,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .main-works-in .collage-block {
-  background-color: #79b8ff;
+  /*background-color: #79b8ff;*/
   position: relative;
   overflow: hidden;
 }
@@ -4067,4 +4068,10 @@ textarea:focus:-ms-input-placeholder {
   font-weight: 700 !important;
   color: #000 !important;
   text-decoration: none !important;
+}
+
+.main-works-in .line-blocks .right-side div:hover img,
+.main-works-in .design .line-blocks-color .right-side .left:hover img,
+.main-works-in .line-blocks .left-side div:hover img {
+  height: 50px;
 }
