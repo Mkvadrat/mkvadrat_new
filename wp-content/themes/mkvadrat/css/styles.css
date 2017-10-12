@@ -684,7 +684,7 @@ textarea:focus:-ms-input-placeholder {
 .header .nav-header a::before {
   content: "";
   position: absolute;
-  bottom: -6px;
+  bottom: 0px;
   left: 0;
   height: 1px;
   width: 0px;
@@ -710,6 +710,7 @@ textarea:focus:-ms-input-placeholder {
 
 .header .left-side a {
   margin-right: 20px;
+  padding-bottom: 6px;
 }
 
 .header .left-side a:last-child {
@@ -722,6 +723,7 @@ textarea:focus:-ms-input-placeholder {
 
 .header .right-side a {
   margin-left: 20px;
+  padding-bottom: 6px;
 }
 
 .header .right-side a:first-child {
