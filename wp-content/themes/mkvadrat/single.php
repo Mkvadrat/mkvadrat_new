@@ -360,6 +360,118 @@ get_header();
             </div>
         </div>
         <?php } ?>
+
+        <!-- Новый блок старт -->
+
+        <div class="collage-block">
+            <div id="card-1" class="collage-1"> 
+                <div class="front"> 
+                    <?php echo $collage_a; ?>
+                </div> 
+                <div class="back">
+                    <?php echo $collage_b; ?>
+                </div> 
+            </div>
+
+            <div id="card-3" class="collage-3"> 
+                <div class="front"> 
+                    <?php echo $collage_c; ?>
+                </div> 
+                <div class="back">
+                    <?php echo $collage_d; ?>
+                </div> 
+            </div>
+
+            <div id="card-5" class="collage-5"> 
+                <div class="front"> 
+                    <?php echo $collage_e; ?>
+                </div> 
+                <div class="back">
+                    <?php echo $collage_f; ?>
+                </div> 
+            </div>
+
+            <div id="card-6" class="collage-6"> 
+                <div class="front"> 
+                   <?php echo $collage_g; ?>
+                </div> 
+                <div class="back">
+                    <?php echo $collage_h; ?>
+                </div> 
+            </div>
+        </div>
+
+        <div class="container-fluid design development-block seo-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="two-halves-block development">
+                            <div class="left-side">
+                                <p class="title-dash">Разработка</p>
+                                <p class="title">Отлаженый механизм это большой труд его нужно ценить</p>
+                                <p>Прежде чем сайт попадает к пользователю, он должен по сути стать полноценным сайтом, как и человек, он должен всему научиться. На этапе программирования, путем решения поставленных задач, проблем и ошибок мы добиваемся нужного результата.</p>
+                            </div>
+                            <div class="right-side">
+                                <span class="scrollto bottom-left" href="#slider-block">
+                                    <img src="images/arrow.png" alt="">
+                                    Технологии
+                                </span>
+                                <div class="empty-block bottom-right">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="line-blocks tools">
+                            <div class="left-side">
+                                <div class="left dark-gray">
+                                    <img src="images/link-22.png" alt="">
+                                    BOOTSTRAP
+                                </div>
+                                <div class="right light-gray">
+                                    <img src="images/link-23.png" alt="">
+                                    SASS
+                                </div>
+                            </div>
+                            <div class="right-side">
+                                <div class="left dark-gray">
+                                    <img src="images/link-24.png" alt="">
+                                    CSS3
+                                </div>
+                                <div class="right light-gray">
+                                    <img src="images/link-25.png" alt="">
+                                    HTML5
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="line-blocks tools">
+                            <div class="left-side">
+                                <div class="left dark-gray">
+                                    <img src="images/link-22.png" alt="">
+                                    BOOTSTRAP
+                                </div>
+                                <div class="right light-gray">
+                                    <img src="images/link-23.png" alt="">
+                                    SASS
+                                </div>
+                            </div>
+                            <div class="right-side">
+                                <div class="left dark-gray">
+                                    <img src="images/link-24.png" alt="">
+                                    CSS3
+                                </div>
+                                <div class="right light-gray">
+                                    <img src="images/link-25.png" alt="">
+                                    HTML5
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Новый блок финиш -->
         
         <?php if($reviews){ ?>
         <div class="container-fluid message-block">

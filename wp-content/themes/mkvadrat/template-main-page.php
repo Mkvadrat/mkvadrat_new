@@ -228,6 +228,51 @@ get_header();
 			    </div>
 			</div>
 		</div>
+
+        <div class="container-fluid bg-form-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-block">
+                            <div class="title-block">
+                                <div class="left-side">
+                                    <p class="title">Хочешь получить предложение именно по своей нише?</p>
+                                    <p>Заполни форму и получи презентацию с примерами работ в течение 1 часа !</p>
+                                </div>
+                                <div class="right-side">
+                                    <p>
+                                        <img src="/wp-content/themes/mkvadrat/images/research.gif" alt="">
+                                        <img src="/wp-content/themes/mkvadrat/images/concept.gif" alt="">
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form">
+                                <div class="left-side">
+                                    <p>Имя*:
+                                        <input type="text" placeholder="Имя">
+                                    </p>
+                                    <p>E-mail*:
+                                        <input type="text" placeholder="E-mail">
+                                    </p>
+                                    <p>Телефон:
+                                        <input type="text" placeholder="Телефон">
+                                    </p>
+                                </div>
+                                <div class="right-side">
+                                    <p>Опишите задачу своими словами:</p>
+                                    <textarea name="" id="" placeholder="Сообщение"></textarea>
+                                    <div class="agree">
+                                        <input id="i-take" type="checkbox" name="i-take"  value="i-take">
+                                        <label for="i-take">Согласен на обработку персональных данных</label>
+                                    </div>
+                                    <input type="submit" value="Получить">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         
 		<?php
 			$args = array(
@@ -241,6 +286,7 @@ get_header();
 			
 			if($review){
 		?>
+
         <div class="container-fluid reviews-slider-block">
             <div class="container">
                 <div class="row">

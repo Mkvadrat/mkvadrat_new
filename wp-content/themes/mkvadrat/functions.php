@@ -55,9 +55,9 @@ if(function_exists('register_nav_menus')){
 
 //Изображение в шапке сайта
 $args = array(
-  'width'         => 43,
-  'height'        => 45,
-  'default-image' => get_template_directory_uri() . '/images/logo.jpg',
+  'width'         => 91,
+  'height'        => 74,
+  'default-image' => get_template_directory_uri() . '/images/logo.png',
   'uploads'       => true,
 );
 add_theme_support( 'custom-header', $args );

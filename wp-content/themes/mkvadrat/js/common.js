@@ -57,13 +57,13 @@ $(document).ready(function() {
     $('.reviews-slider').owlCarousel({
         loop:true,
         margin:10,
-        nav:false,
+        nav:true,
         autoplay:false,
-        smartSpeed:1000,
+        smartSpeed:2000,
         autoplayTimeout:5000,
         dots:true,
         stopOnHover:true,
-        navigationText:["",""],
+        navText:["",""],
         rewindNav:true,
         pagination:true,
         responsive:{
