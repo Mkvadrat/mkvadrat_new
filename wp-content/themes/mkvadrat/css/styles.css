@@ -646,14 +646,20 @@ textarea:focus:-ms-input-placeholder {
 .header .logo {
   position: absolute;
   left: 50%;
-  margin-left: -45px;
-  top: 30px;
+  margin-left: -50px;
+  top: 12px;
   display: block;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -ms-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+}
+
+.header .logo img {
+  display: block;
+  width: 100px;
+  height: 100px;
 }
 
 .header .logo:hover {

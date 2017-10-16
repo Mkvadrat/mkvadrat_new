@@ -759,6 +759,10 @@
 		height: auto;
 	}
 
+	.design-block .two-halves-block .right-side {
+		height: auto;
+	}
+
 	.main-works-in .block-photo-project ~ .two-halves-block-half .right-side,
 	.main-works-in .block-photo-project ~ .two-halves-block-half .left-side {
 		height: auto;
