@@ -49,6 +49,7 @@ if(function_exists('register_nav_menus')){
 		  'main_menu'   => 'Главное меню',
 		  'left_menu'   => 'Левое меню',
 		  'right_menu'  => 'Правое меню',
+		  'footer_menu' => 'Меню в подвале сайта',
 		)
 	);
 }

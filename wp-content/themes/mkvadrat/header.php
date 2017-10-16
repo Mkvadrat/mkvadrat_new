@@ -184,15 +184,15 @@ Version: 1.0
                             <button type="button" class="menu-button hidden-sm hidden-md hidden-lg"><i class="fa fa-bars" aria-hidden="true"></i></button>
                             <div class="menu-items">
                                 <div class="left-side">
-                                    <address>111024, г. Москва<br>2-ая ул. Энтузиастов, д. 5, стр. 39</address>
-                                    <a href="#">Кейсы</a>
-                                    <a href="#">О Нас</a>
+                                    <?php echo getMeta('address_agency_main_page'); ?>
+									<ul>
+										<li><a href="#">Кейсы</a></li>
+										<li><a href="#">О Нас</a></li>
+									</ul>
                                 </div>
                                 <div class="right-side">
                                     <div class="back-call">
-                                        <a href="#">обратный звонок</a>
-                                        <a href="tel:">+7 (495) 240 87 05</a>
-                                        <a href="tel:">+7 (916) ??? ?? ??</a> 
+										<?php echo getMeta('phone_number_agency_main_page'); ?>
                                     </div>
                                     <a href="#">Услуги</a>
                                     <a href="#">Контакты</a>
@@ -200,11 +200,7 @@ Version: 1.0
                             </div>
                         </nav>
 						
-						<?php // echo getMeta('primary_title_main_page'); ?>
-
-						<p class="header-title">Ваш бизнес в Интернете</p>
-                        <p>Профессионализм — это не умение ударить,<br>а знание - куда нужно бить. Разница - в подходе.</p>
-                        <p class="tagline">Разница - в подходе.</p>
+						<?php echo getMeta('primary_title_main_page'); ?>
 
                         <div class="scene">
                             <div class="cube">
