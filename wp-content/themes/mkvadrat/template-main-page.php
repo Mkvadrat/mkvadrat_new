@@ -236,36 +236,33 @@ get_header();
                         <div class="form-block">
                             <div class="title-block">
                                 <div class="left-side">
-                                    <p class="title">Хочешь получить предложение именно по своей нише?</p>
-                                    <p>Заполни форму и получи презентацию с примерами работ в течение 1 часа !</p>
+                                    <?php echo html_entity_decode(get_post_meta( get_the_ID(), 'text_form_block_main_page', $single = true )); ?>
                                 </div>
                                 <div class="right-side">
-                                    <p>
-                                        <img src="/wp-content/themes/mkvadrat/images/research.gif" alt="">
-                                        <img src="/wp-content/themes/mkvadrat/images/concept.gif" alt="">
-                                    </p>
+                                    <?php echo html_entity_decode(get_post_meta( get_the_ID(), 'image_form_block_main_page', $single = true )); ?>
                                 </div>
                             </div>
+                                                       
                             <div class="form">
                                 <div class="left-side">
                                     <p>Имя*:
-                                        <input type="text" placeholder="Имя">
+                                        <input type="text" class="clear" id="name_full_form" placeholder="Ваше имя">
                                     </p>
                                     <p>E-mail*:
-                                        <input type="text" placeholder="E-mail">
+                                        <input type="text" class="clear" id="email_full_form" placeholder="Ваш Email">
                                     </p>
                                     <p>Телефон:
-                                        <input type="text" placeholder="Телефон">
+                                        <input type="text" class="clear" id="phone_full_form" placeholder="Ваш телефон">
                                     </p>
                                 </div>
                                 <div class="right-side">
                                     <p>Опишите задачу своими словами:</p>
-                                    <textarea name="" id="" placeholder="Сообщение"></textarea>
+                                    <textarea  class="clear" id="comment_full_form" placeholder="Ваше сообщение"></textarea>
                                     <div class="agree">
-                                        <input id="i-take" type="checkbox" name="i-take"  value="i-take">
+                                        <input id="i-take" type="checkbox">
                                         <label for="i-take">Согласен на обработку персональных данных</label>
                                     </div>
-                                    <input type="submit" value="Получить">
+                                    <input type="submit" class="agree-button no-active" value="Отправить">
                                 </div>
                             </div>
                         </div>
@@ -323,5 +320,63 @@ get_header();
 
     </main>
     <!-- end main-index -->
+    
+<script type="text/javascript">
+    $(document).ready(function() {
+        if($(window).load()){
+            $(".clear").val('');
+            $('#i-take').removeAttr('checked');
+            $('#i-take-form').removeAttr('checked');
+            $(".agree-button").replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
+        }
+        
+        var checkbox = $("#i-take");
+        
+        checkbox.change(function(event) {
+            var checkbox = event.target;
+            if (checkbox.checked) {
+                $(".agree-button").replaceWith('<input type="submit" class="agree-button active" onclick="sendFullForm();" value="Отправить">');
+            }else{
+                $(".agree-button").replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+
+//форма обратной связи
+
+function sendFullForm() {
+var data = {
+    'action': 'sendFullForm',
+    'name' : $('#name_full_form').val(),
+    'phone' : $('#phone_full_form').val(),
+    'email' : $('#email_full_form').val(),
+    'comment' : $('#comment_full_form').val(),
+};
+
+$.ajax({
+    url:'http://' + location.host + '/wp-admin/admin-ajax.php',
+    data:data, // данные
+    type:'POST', // тип запроса
+    success:function(data){
+        swal({
+            title: data.message,
+            text: "",
+            timer: 1000,
+            showConfirmButton: false
+        });
+        
+        if(data.status == 200) {
+            $('#i-take').removeAttr('checked');
+            $( ".agree-button" ).replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
+        }
+    
+        $.fancybox.close();
+    }
+});
+};
+</script>
     
 <?php get_footer(); ?>

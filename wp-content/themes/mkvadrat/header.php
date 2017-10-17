@@ -113,7 +113,6 @@ Version: 1.0
 							'link_after'      => '',
 							'items_wrap'      => '<ul class="main-list">%3$s</ul>',
 							'depth'           => 1,
-							'walker'          => '',
 						) );
 					}
 				?>
@@ -130,72 +129,58 @@ Version: 1.0
                             />
 						</a>
 
-                        <!-- <nav class="nav-header">
-                        	<button type="button" class="menu-button hidden-sm hidden-md hidden-lg"><i class="fa fa-bars" aria-hidden="true"></i></button>
-                        	<div class="menu-items">
-							<?php
-								if (has_nav_menu('left_menu')){
-									wp_nav_menu( array(
-										'theme_location'  => 'left_menu',
-										'menu'            => '',
-										'container'       => false,
-										'container_class' => '',
-										'container_id'    => '',
-										'menu_class'      => '',
-										'menu_id'         => '',
-										'echo'            => true,
-										'fallback_cb'     => 'wp_page_menu',
-										'before'          => '',
-										'after'           => '',
-										'link_before'     => '',
-										'link_after'      => '',
-										'items_wrap'      => '<div class="left-side">%3$s</div>',
-										'depth'           => 1,
-										'walker'          => new menu(),
-									) );
-								}
-							?>
-							<?php
-								if (has_nav_menu('right_menu')){
-									wp_nav_menu( array(
-										'theme_location'  => 'right_menu',
-										'menu'            => '',
-										'container'       => false,
-										'container_class' => '',
-										'container_id'    => '',
-										'menu_class'      => '',
-										'menu_id'         => '',
-										'echo'            => true,
-										'fallback_cb'     => 'wp_page_menu',
-										'before'          => '',
-										'after'           => '',
-										'link_before'     => '',
-										'link_after'      => '',
-										'items_wrap'      => '<div class="right-side">%3$s</div>',
-										'depth'           => 1,
-										'walker'          => new menu(),
-									) );
-								}
-							?>
-							</div>
-                        </nav> -->
-
                         <nav class="nav-header">
                             <button type="button" class="menu-button hidden-sm hidden-md hidden-lg"><i class="fa fa-bars" aria-hidden="true"></i></button>
                             <div class="menu-items">
                                 <div class="left-side">
-                                    <?php echo getMeta('address_agency_main_page'); ?>
-									<ul>
-										<li><a href="#">Кейсы</a></li>
-										<li><a href="#">О Нас</a></li>
-									</ul>
+                                    <?php echo getMeta('address_agency_header_main_page'); ?>
+									<?php
+										if (has_nav_menu('left_menu')){
+											wp_nav_menu( array(
+												'theme_location'  => 'left_menu',
+												'menu'            => '',
+												'container'       => false,
+												'container_class' => '',
+												'container_id'    => '',
+												'menu_class'      => '',
+												'menu_id'         => '',
+												'echo'            => true,
+												'fallback_cb'     => 'wp_page_menu',
+												'before'          => '',
+												'after'           => '',
+												'link_before'     => '',
+												'link_after'      => '',
+												'items_wrap'      => '<ul>%3$s</ul>',
+												'depth'           => 1,
+											) );
+										}
+									?>
                                 </div>
                                 <div class="right-side">
                                     <div class="back-call">
-										<?php echo getMeta('phone_number_agency_main_page'); ?>
+                                        <?php echo getMeta('phone_number_agency_header_main_page'); ?>
                                     </div>
-                                    <a href="#">Услуги</a>
-                                    <a href="#">Контакты</a>
+									<?php
+										if (has_nav_menu('right_menu')){
+											wp_nav_menu( array(
+												'theme_location'  => 'right_menu',
+												'menu'            => '',
+												'container'       => false,
+												'container_class' => '',
+												'container_id'    => '',
+												'menu_class'      => '',
+												'menu_id'         => '',
+												'echo'            => true,
+												'fallback_cb'     => 'wp_page_menu',
+												'before'          => '',
+												'after'           => '',
+												'link_before'     => '',
+												'link_after'      => '',
+												'items_wrap'      => '<ul>%3$s</ul>',
+												'depth'           => 1,
+											) );
+										}
+									?>
                                 </div>
                             </div>
                         </nav>
@@ -294,9 +279,8 @@ Version: 1.0
 										'after'           => '',
 										'link_before'     => '',
 										'link_after'      => '',
-										'items_wrap'      => '<div class="right-side">%3$s</div>',
+										'items_wrap'      => '<ul>%3$s</ul>',
 										'depth'           => 1,
-										'walker'          => new menu(),
 									) );
 								}
 							?>

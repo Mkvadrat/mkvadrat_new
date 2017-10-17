@@ -57,6 +57,15 @@ get_header();
         $develop_block_e = html_entity_decode( get_post_meta( get_the_ID(), 'e_develop_block_projects_page', $single = true ));
         $develop_block_f = html_entity_decode( get_post_meta( get_the_ID(), 'f_develop_block_projects_page', $single = true ));
         $develop_block_g = html_entity_decode( get_post_meta( get_the_ID(), 'g_develop_block_projects_page', $single = true ));
+        $seo = html_entity_decode( get_post_meta( get_the_ID(), 'title_text_seo_block_projects_page', $single = true ));
+        $seo_block_a = html_entity_decode( get_post_meta( get_the_ID(), 'a_seo_block_projects_page', $single = true ));
+        $seo_block_b = html_entity_decode( get_post_meta( get_the_ID(), 'b_seo_block_projects_page', $single = true ));
+        $seo_block_c = html_entity_decode( get_post_meta( get_the_ID(), 'c_seo_block_projects_page', $single = true ));
+        $seo_block_d = html_entity_decode( get_post_meta( get_the_ID(), 'd_seo_block_projects_page', $single = true ));
+        $seo_block_e = html_entity_decode( get_post_meta( get_the_ID(), 'e_seo_block_projects_page', $single = true ));
+        $seo_block_f = html_entity_decode( get_post_meta( get_the_ID(), 'f_seo_block_projects_page', $single = true ));
+        $seo_block_g = html_entity_decode( get_post_meta( get_the_ID(), 'g_seo_block_projects_page', $single = true ));
+        $seo_block_h = html_entity_decode( get_post_meta( get_the_ID(), 'h_seo_block_projects_page', $single = true ));
         $photo_author = getImage('photo_author_reviews_text_projects_page', 'small');
         $author = html_entity_decode( get_post_meta( get_the_ID(), 'author_reviews_text_projects_page', $single = true ));
         $reviews = html_entity_decode( get_post_meta( get_the_ID(), 'reviews_text_projects_page', $single = true ));
@@ -400,21 +409,19 @@ get_header();
                 </div> 
             </div>
         </div>
-
+        
+        <?php if($seo || $seo_block_a || $seo_block_b || $seo_block_c || $seo_block_d || $seo_block_e || $seo_block_f || $seo_block_g){ ?>
         <div class="container-fluid design development-block seo-block">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="two-halves-block development">
                             <div class="left-side">
-                                <p class="title-dash">Разработка</p>
-                                <p class="title">Отлаженый механизм это большой труд его нужно ценить</p>
-                                <p>Прежде чем сайт попадает к пользователю, он должен по сути стать полноценным сайтом, как и человек, он должен всему научиться. На этапе программирования, путем решения поставленных задач, проблем и ошибок мы добиваемся нужного результата.</p>
+                                <?php echo $develop; ?>
                             </div>
                             <div class="right-side">
                                 <span class="scrollto bottom-left" href="#slider-block">
-                                    <img src="images/arrow.png" alt="">
-                                    Технологии
+                                    <?php echo $seo_block_a; ?>
                                 </span>
                                 <div class="empty-block bottom-right">
                                 </div>
@@ -424,22 +431,18 @@ get_header();
                         <div class="line-blocks tools">
                             <div class="left-side">
                                 <div class="left dark-gray">
-                                    <img src="images/link-22.png" alt="">
-                                    BOOTSTRAP
+                                    <?php echo $seo_block_b; ?>
                                 </div>
                                 <div class="right light-gray">
-                                    <img src="images/link-23.png" alt="">
-                                    SASS
+                                   <?php echo $seo_block_c; ?>
                                 </div>
                             </div>
                             <div class="right-side">
                                 <div class="left dark-gray">
-                                    <img src="images/link-24.png" alt="">
-                                    CSS3
+                                    <?php echo $seo_block_d; ?>
                                 </div>
                                 <div class="right light-gray">
-                                    <img src="images/link-25.png" alt="">
-                                    HTML5
+                                    <?php echo $seo_block_e; ?>
                                 </div>
                             </div>
                         </div>
@@ -447,22 +450,18 @@ get_header();
                         <div class="line-blocks tools">
                             <div class="left-side">
                                 <div class="left dark-gray">
-                                    <img src="images/link-22.png" alt="">
-                                    BOOTSTRAP
+                                    <?php echo $seo_block_c; ?>
                                 </div>
                                 <div class="right light-gray">
-                                    <img src="images/link-23.png" alt="">
-                                    SASS
+                                   <?php echo $seo_block_f; ?>
                                 </div>
                             </div>
                             <div class="right-side">
                                 <div class="left dark-gray">
-                                    <img src="images/link-24.png" alt="">
-                                    CSS3
+                                    <?php echo $seo_block_g; ?>
                                 </div>
                                 <div class="right light-gray">
-                                    <img src="images/link-25.png" alt="">
-                                    HTML5
+                                    <?php echo $seo_block_h; ?>
                                 </div>
                             </div>
                         </div>
@@ -470,7 +469,7 @@ get_header();
                 </div>
             </div>
         </div>
-
+        <?php } ?>
         <!-- Новый блок финиш -->
         
         <?php if($reviews){ ?>
