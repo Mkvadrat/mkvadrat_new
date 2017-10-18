@@ -150,22 +150,22 @@ get_header();
                                 <p class="title">Форма для обратной связи</p>
                                 <span>
                                     <p>Имя*:
-                                        <input type="text" id="name" placeholder="Имя">
+                                        <input type="text" class="clear" id="name" placeholder="Имя">
                                     </p>
                                     <p>E-mail*:
-                                        <input type="text" id="email" placeholder="E-mail">
+                                        <input type="text" class="clear" id="email" placeholder="E-mail">
                                     </p>
                                     <p>Телефон:
-                                        <input type="text" id="phone" placeholder="Телефон">
+                                        <input type="text" class="clear" id="phone" placeholder="Телефон">
                                     </p>
                                     <p>Сообщение:
-                                        <textarea name="" id="comment" placeholder="Сообщение"></textarea>
+                                        <textarea class="clear" id="comment" placeholder="Сообщение"></textarea>
                                     </p>
                                     <span class="agree">
                                         <input id="i-take" type="checkbox">
                                         <label for="i-take">Согласен на обработку персональных данных</label>
                                     </span>
-                                    <input type="submit" onclick="SendForm();" value="отправить">
+                                    <input type="submit" class="agree-button no-active" value="Отправить">
                                 </span>
                             </div>
                             <div class="right-side">
@@ -180,6 +180,27 @@ get_header();
     </main>
 
     <!-- end main-contacts -->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        if($(window).load()){
+            $(".clear").val('');
+            $('#i-take').removeAttr('checked');
+            $(".agree-button").replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
+        }
+        
+        var checkbox = $("#i-take");
+        
+        checkbox.change(function(event) {
+            var checkbox = event.target;
+            if (checkbox.checked) {
+                $(".agree-button").replaceWith('<input type="submit" class="agree-button active" onclick="SendForm();" value="Отправить">');
+            }else{
+                $(".agree-button").replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
+            }
+        });
+    });
+</script>
     
 <script type="text/javascript">
 //форма обратной связи
@@ -196,10 +217,15 @@ function SendForm() {
 		data:data,
 		type:'POST',
 		success:function(data){
-			swal(data.message);
+            swal(data.message);
+            
+            if(data.status == 200) {
+                $('#i-take').removeAttr('checked');
+                $( ".agree-button" ).replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
+            }
 		}
 	});
 };
 </script>
-  
+
 <?php get_footer(); ?>

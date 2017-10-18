@@ -326,7 +326,6 @@ get_header();
         if($(window).load()){
             $(".clear").val('');
             $('#i-take').removeAttr('checked');
-            $('#i-take-form').removeAttr('checked');
             $(".agree-button").replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
         }
         
@@ -344,9 +343,7 @@ get_header();
 </script>
 
 <script type="text/javascript">
-
 //форма обратной связи
-
 function sendFullForm() {
 var data = {
     'action': 'sendFullForm',
@@ -361,19 +358,12 @@ $.ajax({
     data:data, // данные
     type:'POST', // тип запроса
     success:function(data){
-        swal({
-            title: data.message,
-            text: "",
-            timer: 1000,
-            showConfirmButton: false
-        });
+        swal(data.message);
         
         if(data.status == 200) {
             $('#i-take').removeAttr('checked');
             $( ".agree-button" ).replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
         }
-    
-        $.fancybox.close();
     }
 });
 };

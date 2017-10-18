@@ -526,8 +526,8 @@ get_header();
                             <label for="i-take">Согласен на обработку персональных данных</label>
                         </div>
                         <div class="order-block">
-                            <input type="text" id="email" placeholder="Введите Ваш e-mail">
-                            <input type="submit" onclick="SendShort();" value="Заказать">
+                            <input type="text" class="clear" id="email" placeholder="Введите Ваш e-mail">
+                            <input type="submit" class="agree-button no-active" value="Отправить">
                         </div>
                     </div>
                 </div>
@@ -537,5 +537,49 @@ get_header();
     </main>
 
     <!-- end main-works-in -->
+    
+<script type="text/javascript">
+$(document).ready(function() {
+    if($(window).load()){
+        $(".clear").val('');
+        $('#i-take').removeAttr('checked');
+        $(".agree-button").replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
+    }
+    
+    var checkbox = $("#i-take");
+    
+    checkbox.change(function(event) {
+        var checkbox = event.target;
+        if (checkbox.checked) {
+            $(".agree-button").replaceWith('<input type="submit" class="agree-button active" onclick="SendShort();" value="Отправить">');
+        }else{
+            $(".agree-button").replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
+        }
+    });
+});
+</script>
+
+<script type="text/javascript">
+//форма обратной связи
+function SendShort() {
+    var data = {
+        'action': 'SendShort',
+        'email' : $('#email').val(),
+    };
+    $.ajax({
+        url:'http://' + location.host + '/wp-admin/admin-ajax.php',
+        data:data,
+        type:'POST',
+        success:function(data){
+            swal(data.message);
+            
+            if(data.status == 200) {
+                $('#i-take').removeAttr('checked');
+                $( ".agree-button" ).replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
+            }
+        }
+    });
+};
+</script>
 
 <?php get_footer(); ?>

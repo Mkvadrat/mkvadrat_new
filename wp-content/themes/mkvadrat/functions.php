@@ -1199,7 +1199,7 @@ function SendForm(){
 
 		if ($send == 'true'){
 			$alert = array(
-				'status' => 1,
+				'status' => 200,
 				'message' => 'Ваше сообщение отправлено'
 			);
 		}else{
@@ -1534,7 +1534,7 @@ function SendShort(){
 
 		if ($send == 'true'){
 			$alert = array(
-				'status' => 1,
+				'status' => 200,
 				'message' => 'Ваше сообщение отправлено'
 			);
 		}else{
