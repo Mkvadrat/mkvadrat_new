@@ -4864,3 +4864,15 @@ textarea:focus:-ms-input-placeholder {
     margin-bottom: 22px;
     margin-top: 23px;
 }
+
+.main-index .form input[type="submit"].active,
+.main-contacts .block-form input[type="submit"].active {
+  color: #FFF !important;
+  text-decoration: none !important;
+}
+
+.order-block input[type="submit"].active,
+.want-order input[type="submit"].active {
+  background: #cb0000 !important;
+  color: #FFF !important;
+}
