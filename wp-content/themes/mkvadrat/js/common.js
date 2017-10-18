@@ -141,4 +141,8 @@ $(document).ready(function() {
         $(".header-other-pages .fixed-menu .other-list").slideToggle();
     });
 
+    $(".menu-button").click(function() {
+        $(".nav-header > ul").slideToggle();
+    });
+
 });

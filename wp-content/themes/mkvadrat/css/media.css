@@ -251,6 +251,17 @@
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px) {
 
+	.nav-header > ul {
+		display: none;
+		width: 100%;
+	}
+
+	.nav-header > ul li {
+		display: block;
+		margin: 0 !important;
+		text-align: center;
+	}
+
 	.header .nav-header .left-side ul li,
 	.header .nav-header .right-side ul li {
 		display: block;
@@ -378,6 +389,7 @@
 
 	.header .header-title {
 		font-size: 36px;
+		line-height: 40px;
 	}
 
 	.header p {
@@ -661,6 +673,10 @@
 
 	.main-works-in .works-list li {
 		width: 50%;
+	}
+
+	.logo-footer {
+		display: none;
 	}
 
 }

@@ -521,6 +521,10 @@ get_header();
                 <div class="row">
                     <div class="col-md-12">
                         <p class="title">хотите заказать подобный проект?</p>
+                        <div class="agree">
+                            <input id="i-take" type="checkbox">
+                            <label for="i-take">Согласен на обработку персональных данных</label>
+                        </div>
                         <div class="order-block">
                             <input type="text" id="email" placeholder="Введите Ваш e-mail">
                             <input type="submit" onclick="SendShort();" value="Заказать">

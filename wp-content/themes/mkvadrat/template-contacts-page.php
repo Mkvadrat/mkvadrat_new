@@ -161,6 +161,10 @@ get_header();
                                     <p>Сообщение:
                                         <textarea name="" id="comment" placeholder="Сообщение"></textarea>
                                     </p>
+                                    <span class="agree">
+                                        <input id="i-take" type="checkbox">
+                                        <label for="i-take">Согласен на обработку персональных данных</label>
+                                    </span>
                                     <input type="submit" onclick="SendForm();" value="отправить">
                                 </span>
                             </div>
