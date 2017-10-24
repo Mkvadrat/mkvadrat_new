@@ -134,11 +134,11 @@ $(document).ready(function() {
     });
 
     $(".menu-button").click(function() {
-        $(".header-other-pages .nav-header .right-side").slideToggle();
+        $(".header-other-pages .nav-header .right-side").slideToggle(0);
     });
 
     $(".menu-button-fixed").click(function() {
-        $(".header-other-pages .fixed-menu .other-list").slideToggle();
+        $(".header-other-pages .fixed-menu .other-list").slideToggle(0);
     });
 
     $(".menu-button").click(function() {
