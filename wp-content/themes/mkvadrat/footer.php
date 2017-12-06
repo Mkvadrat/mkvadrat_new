@@ -14,7 +14,7 @@ Version: 1.0
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-footer"><?php echo getImage('logo_footer_main_page');?></a>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-footer"><?php echo getImage('logo_footer_main_page'); ?></a>
                     <nav>
                         <?php
                             if (has_nav_menu('footer_menu')){

@@ -1011,7 +1011,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .header .front {
-  background-image: url(https://askd.github.io/codepen/front.jpg);
+  background-image: url(../images/front.gif);
 }
 
 @-webkit-keyframes example {
@@ -4878,4 +4878,340 @@ textarea:focus:-ms-input-placeholder {
 .want-order input[type="submit"].active {
   background: #cb0000 !important;
   color: #FFF !important;
+}
+
+/*--------------------------------------------------------*/
+/*------------------ start main-blog-in ------------------*/
+/*--------------------------------------------------------*/
+.main-blog-in {
+  padding: 40px 0 60px;
+}
+
+.main-blog-in .title-h2 {
+  padding-bottom: 10px;
+  color: black;
+  font-family: "robotoslabregular";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+.main-blog-in p {
+  padding-bottom: 20px;
+  color: black;
+  font-family: "robotoslabregular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.main-blog-in p:not([class]) {
+  text-indent: 15px;
+}
+
+.main-blog-in .big-image {
+  padding: 20px 0 40px;
+}
+
+.main-blog-in .big-image img {
+  width: 100%;
+}
+
+.main-blog-in .small-image img {
+  width: 100%;
+}
+
+.main-blog-in .text-image {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding-bottom: 20px;
+}
+
+.main-blog-in .text-image .text-block,
+.main-blog-in .text-image .image-block {
+  width: 50%;
+}
+
+.main-blog-in .text-image .text-block {
+  padding-right: 15px;
+}
+
+.main-blog-in .text-image .image-block {
+  padding-left: 15px;
+}
+
+.main-blog-in .image-text {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  padding-bottom: 20px;
+}
+
+.main-blog-in .image-text .text-block,
+.main-blog-in .image-text .image-block {
+  width: 50%;
+}
+
+.main-blog-in .image-text .text-block {
+  padding-left: 15px;
+}
+
+.main-blog-in .image-text .image-block {
+  padding-right: 15px;
+}
+
+.main-blog-in .text-list {
+  padding-bottom: 20px;
+}
+
+.main-blog-in .text-list li {
+  position: relative;
+  padding-left: 8px;
+  padding-bottom: 5px;
+  color: black;
+  font-family: "robotoslabregular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.main-blog-in .text-list li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  top: 10px;
+  width: 4px;
+  height: 4px;
+  background: #000;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.main-blog-in .social-list {
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.main-blog-in .social-list li {
+  display: inline-block;
+  margin-bottom: 2px;
+}
+
+.main-blog-in .social-list li a {
+  display: block;
+  width: 100%;
+}
+
+.main-blog-in .back-to-search {
+  color: #7f7f7f;
+  font-family: "robotoslabregular";
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.main-blog-in .back-to-search:hover {
+  text-decoration: none;
+}
+
+/*--------------------------------------------------------*/
+/*------------------- end main-blog-in -------------------*/
+/*--------------------------------------------------------*/
+/*--------------------------------------------------------*/
+/*--------------------- end main-blog --------------------*/
+/*--------------------------------------------------------*/
+.main-blog {
+  background: #7ab9ff;
+}
+
+.main-blog .articles-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-justify-content: space-between;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.main-blog .articles-list li {
+  width: 49.8%;
+  margin-bottom: 4px;
+  background: #fff;
+}
+
+.main-blog .articles-list li .image-block {
+  height: 260px;
+  background-size: cover;
+  background-position: center;
+}
+
+.main-blog .articles-list li .text-block {
+  position: relative;
+  min-height: 220px;
+  padding: 30px 20px 90px 50px;
+}
+
+.main-blog .articles-list li .text-block .title {
+  padding-bottom: 10px;
+  color: black;
+  font-family: "robotoslabregular";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.main-blog .articles-list li .text-block p {
+  padding-bottom: 10px;
+  color: black;
+  font-family: "robotoslabregular";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.main-blog .articles-list li .text-block .more-date {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+  padding: 0 20px 0 50px;
+}
+
+.main-blog .articles-list li .text-block .more-date a {
+  color: #a4a4a4;
+  font-family: "robotoslabregular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: underline;
+}
+
+.main-blog .articles-list li .text-block .more-date a:hover {
+  text-decoration: none;
+}
+
+.main-blog .articles-list li .text-block .more-date time {
+  color: #a4a4a4;
+  font-family: "robotoslabregular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  float: right;
+}
+
+.main-blog .paggination {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 35px 0 40px;
+}
+
+.main-blog .paggination li {
+  margin-right: 20px;
+}
+
+.main-blog .paggination li a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  text-align: center;
+  color: #fff;
+  font-family: "robotoslabregular";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.main-blog .paggination li a:hover {
+  background: #cb0101;
+}
+
+.main-blog .paggination li a.active {
+  background: #cb0101;
+}
+
+.main-blog .paggination li:last-child {
+  margin-left: 25px;
+  margin-right: 0;
+}
+
+.main-blog .paggination li:last-child a {
+  width: auto;
+  padding: 0 15px;
+}
+
+/*--------------------------------------------------------*/
+/*--------------------- end main-blog --------------------*/
+/*--------------------------------------------------------*/
+
+/*--------------------------------------------------------*/
+/*--------------------- sharing soc buttons --------------*/
+/*--------------------------------------------------------*/
+.wp-share-button{
+	text-align:center;
 }
