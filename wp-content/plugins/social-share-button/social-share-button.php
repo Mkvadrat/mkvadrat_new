@@ -3,7 +3,7 @@
 Plugin Name: Social Share Button
 Plugin URI: http://pickplugins.com
 Description: Awesome Share Button.
-Version: 2.1.5
+Version: 2.1.6
 Author: pickplugins
 Author URI: http://pickplugins.com
 Text Domain: social_share_button
@@ -18,69 +18,74 @@ class SocialShareButton{
 	
 	public function __construct(){
 		
-	define('social_share_button_plugin_url', plugins_url('/', __FILE__)  );
-	//define('social_share_button_plugin_url', WP_PLUGIN_URL . '/' . plugin_basename( dirname(__FILE__) ) . '/' );
-	define('social_share_button_plugin_dir', plugin_dir_path( __FILE__ ) );
-	define('social_share_button_wp_url', 'https://wordpress.org/plugins/social-share-button/' );
-	define('social_share_button_wp_reviews', 'https://wordpress.org/plugins/social-share-button/#reviews' );
-	define('social_share_button_pro_url','http://www.pickplugins.com/' );
-	define('social_share_button_demo_url', 'www.pickplugins.com/demo/social-share-button/' );
-	define('social_share_button_conatct_url', 'http://www.pickplugins.com/contact/' );
-	define('social_share_button_qa_url', 'http://www.pickplugins.com/questions/' );
-	define('social_share_button_plugin_name', 'Social Share Button' );
-	define('social_share_button_plugin_version', '2.1.5' );
-	define('social_share_button_customer_type', 'free' );	 // pro & free	
-	define('social_share_button_share_url', 'https://wordpress.org/plugins/social-share-button/' );
+		define('social_share_button_plugin_url', plugins_url('/', __FILE__)  );
+		define('social_share_button_plugin_dir', plugin_dir_path( __FILE__ ) );
+		define('social_share_button_wp_url', 'https://wordpress.org/plugins/social-share-button/' );
+		define('social_share_button_wp_reviews', 'https://wordpress.org/plugins/social-share-button/#reviews' );
+		define('social_share_button_pro_url','http://www.pickplugins.com/' );
+		define('social_share_button_demo_url', 'www.pickplugins.com/demo/social-share-button/' );
+		define('social_share_button_conatct_url', 'http://www.pickplugins.com/contact/' );
+		define('social_share_button_qa_url', 'http://www.pickplugins.com/questions/' );
+		define('social_share_button_plugin_name', __('Social Share Button', 'social-share-button') );
+		define('social_share_button_plugin_version', '2.1.6' );
+		define('social_share_button_customer_type', 'free' );	 // pro & free
+		define('social_share_button_share_url', 'https://wordpress.org/plugins/social-share-button/' );
 
-	define('social_share_button_tutorial_doc_url', 'http://www.pickplugins.com' );	
+		define('social_share_button_tutorial_doc_url', 'https://www.pickplugins.com/documentation/social-share-button/' );
 
-	// Class
-	//require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-types.php');	
-	// require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta.php');	
-	require_once( plugin_dir_path( __FILE__ ) . 'includes/class-shortcodes.php');	
-	require_once( plugin_dir_path( __FILE__ ) . 'includes/class-functions.php');
-	require_once( plugin_dir_path( __FILE__ ) . 'includes/class-settings.php');
+		// Class
+		//require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-types.php');
+		// require_once( plugin_dir_path( __FILE__ ) . 'includes/class-post-meta.php');
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-shortcodes.php');
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-functions.php');
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-settings.php');
 
 		require_once( plugin_dir_path( __FILE__ ) . 'includes/class-migrate.php');
 
 
-	// Function's
-	require_once( plugin_dir_path( __FILE__ ) . 'includes/functions.php');
+		// Function's
+		require_once( plugin_dir_path( __FILE__ ) . 'includes/functions.php');
 
-	//add_action( 'admin_enqueue_scripts', 'wp_enqueue_media' );
-	add_action( 'wp_enqueue_scripts', array( $this, 'social_share_button_front_scripts' ) );
-	add_action( 'admin_enqueue_scripts', array( $this, 'social_share_button_admin_scripts' ) );
+		//add_action( 'admin_enqueue_scripts', 'wp_enqueue_media' );
+		add_action( 'wp_enqueue_scripts', array( $this, 'front_scripts' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'admin_scripts' ) );
 	
-	add_action( 'plugins_loaded', array( $this, 'social_share_button_load_textdomain' ));
+
+		add_action( 'init', array( $this, 'textdomain' ));
+
+		register_activation_hook( __FILE__, array( $this, 'activation' ) );
+		register_deactivation_hook( __FILE__, array( $this, 'deactivation' ) );
+		//register_uninstall_hook( __FILE__, array( $this, 'uninstall' ) );
 	
 	}
 	
-	public function social_share_button_load_textdomain() {
-	  load_plugin_textdomain( 'social_share_button', false, plugin_basename( dirname( __FILE__ ) ) . '/languages/' ); 
+	public function textdomain() {
+
+		$locale = apply_filters( 'plugin_locale', get_locale(), 'social-share-button' );
+		load_textdomain('social-share-button', WP_LANG_DIR .'/social-share-button/social-share-button-'. $locale .'.mo' );
+
+		load_plugin_textdomain( 'social-share-button', false, plugin_basename( dirname( __FILE__ ) ) . '/languages/' );
 	}
 	
 	
 	
 	
-	public function social_share_button_install(){
+	public function activation(){
 
-
-		update_option('social_share_button_version','2.1.1');
-		
-		do_action( 'social_share_button_action_install' );
+		do_action( 'social_share_button_activation' );
 		}		
 		
-	public function social_share_button_uninstall(){
+	public function uninstall(){
 		
-		do_action( 'social_share_button_action_uninstall' );
+		do_action( 'social_share_button_uninstall' );
 		}		
 		
-	public function social_share_button_deactivation(){
+	public function deactivation(){
 		
-		do_action( 'social_share_button_action_deactivation' );
+		do_action( 'social_share_button_deactivation' );
 		}
 		
-	public function social_share_button_front_scripts(){
+	public function front_scripts(){
 		
 		wp_enqueue_script('jquery');
 		//wp_enqueue_script('jquery-ui-datepicker');
@@ -95,7 +100,7 @@ class SocialShareButton{
 
 		}
 
-	public function social_share_button_admin_scripts(){
+	public function admin_scripts(){
 		
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('jquery-ui-core');

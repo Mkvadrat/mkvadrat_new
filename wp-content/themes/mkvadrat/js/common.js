@@ -144,5 +144,21 @@ $(document).ready(function() {
     $(".menu-button").click(function() {
         $(".nav-header > ul").slideToggle();
     });
+    
+    if($(window).load()){
+        $(".agree-button").replaceWith('<input type="submit" value="Отправить" class="wpcf7-form-control wpcf7-submit agree-button no-active">');
+    }
+    
+    var checkbox = $("#i-take");
+    
+    checkbox.change(function(event) {
+        var checkbox = event.target;
+        if (checkbox.checked) {
+            $(".agree-button").replaceWith('<input type="submit" value="Отправить" class="wpcf7-form-control wpcf7-submit agree-button active">');
+        }else{
+            $(".agree-button").replaceWith('<input type="submit" value="Отправить" class="wpcf7-form-control wpcf7-submit agree-button no-active">');
+        }
+    });
+
 
 });

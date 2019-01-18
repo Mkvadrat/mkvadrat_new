@@ -4,7 +4,7 @@
 	Tags: Share, social share buttons, social share button, share button, social share, social share plugin, share plugin, social share plugin wordpress, Social Media Plugins, Social Media share
 	Requires at least: 4.1
 	Tested up to: 4.9
-	Stable tag: 2.1.5
+	Stable tag: 2.1.6
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -27,6 +27,7 @@ Displaying social share button on your website is most powerful way to boost you
 ### Social Share Button by [http://pickplugins.com](http://pickplugins.com)
 
 
+* [Plugin page! &raquo;](https://www.pickplugins.com/item/social-share-button/)
 * [Live Demo! &raquo;](https://www.pickplugins.com/demo/social-share-button/)
 * [Support &raquo;](http://www.pickplugins.com/questions/)
 * [Documentation &raquo;](https://www.pickplugins.com/documentation/social-share-button/)
@@ -105,6 +106,10 @@ Anyone can contribute on translation for Social Share Button, please see the def
 
 == Changelog ==
 
+
+
+= 2.1.6 =
+* 04/02/2018 - add - ready for translate.wordpress.org
 
 = 2.1.5 =
 * 14/11/2017 - add - reset sharing sites sorting.

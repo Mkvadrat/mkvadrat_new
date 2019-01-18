@@ -16,7 +16,7 @@ get_header();
     <main class="main-index">
         
         <!-- start our-approach -->
-
+        <?php if(get_post_meta( get_the_ID(), 'enable_block_a_section_main_page', $single = true ) == 'yes'){ ?>
         <div class="container-fluid our-approach">
             <div class="container">
                 <div class="row">
@@ -31,11 +31,11 @@ get_header();
                 </div>
             </div>
         </div>
-
+        <?php } ?>
         <!-- end our-approach -->
 
         <!-- start block-description -->
-
+        <?php if(get_post_meta( get_the_ID(), 'enable_block_b_section_main_page', $single = true ) == 'yes'){ ?>
         <div class="container-fluid block-description">
             <div class="container">
                 <div class="row">
@@ -54,10 +54,10 @@ get_header();
                 
                     <div class="col-md-12">
                         <div id="slider-block" class="slider-block">
-                            <div class="owl-carousel owl-theme example-site">
+                            <div class="owl-carousel owl-theme example-site">                               
                                 <?php
                                     global $nggdb;
-                                    $ngg_id_f = getNextGallery(get_the_ID(), 'first_slider_main_page');
+                                    $ngg_id_f = get_field('first_slider_main_page', get_the_ID());
                                     $ngg_image_f = $nggdb->get_gallery($ngg_id_f[0]["ngg_id"], 'sortorder', 'ASC', false, 0, 0);
                                     if($ngg_image_f){
                                         foreach($ngg_image_f as $image) {
@@ -104,7 +104,7 @@ get_header();
                                 <div class="owl-carousel owl-theme with-whom">
                                     <?php
                                         global $nggdb;
-                                        $ngg_id_s = getNextGallery(get_the_ID(), 'second_slider_main_page');
+                                        $ngg_id_s = get_field('second_slider_main_page', get_the_ID());
                                         $ngg_image_s = $nggdb->get_gallery($ngg_id_s[0]["ngg_id"], 'sortorder', 'ASC', false, 0, 0);
                                         if($ngg_image_s){
                                             foreach($ngg_image_s as $image) {
@@ -136,67 +136,65 @@ get_header();
 
                 </div>
             </div>
-
         </div>
-
+        <?php } ?>
         <!-- start block-description -->
 
         <!-- start collage-block -->
-        <?php $enable_collage = get_post_meta( get_the_ID(), 'enable_collage_main_page', $single = true ); ?>
-        
-        <?php if($enable_collage == 'yes'){ ?>
+        <?php if(get_post_meta( get_the_ID(), 'enable_block_c_section_main_page', $single = true ) == 'yes'){ ?>
+        <?php $collage = get_field('collage_fourth_block_main_page', get_the_ID()); ?>
         <div class="collage-block">
             <div id="card-1" class="collage-1">
                 <div class="front"> 
-                    <?php echo getImage('collage_a_fourth_block_main_page', 'big'); ?>
+                    <img src="<?php echo $collage['collage_a_fourth_block_main_page']['url'] ? $collage['collage_a_fourth_block_main_page']['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage['collage_a_fourth_block_main_page']['alt']; ?>">
                 </div> 
                 <div class="back">
-                    <?php echo getImage('collage_b_fourth_block_main_page', 'big'); ?>
+                    <img src="<?php echo $collage['collage_b_fourth_block_main_page']['url'] ? $collage['collage_b_fourth_block_main_page']['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage['collage_a_fourth_block_main_page']['alt']; ?>">
                 </div> 
             </div>
 
             <div id="card-2" class="collage-2"> 
-                <div class="front"> 
-                    <?php echo getImage('collage_c_fourth_block_main_page', 'big'); ?>
+                <div class="front">
+                    <img src="<?php echo $collage['collage_c_fourth_block_main_page']['url'] ? $collage['collage_c_fourth_block_main_page']['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage['collage_a_fourth_block_main_page']['alt']; ?>">
                 </div> 
                 <div class="back">
-                    <?php echo getImage('collage_d_fourth_block_main_page', 'big'); ?>
+                    <img src="<?php echo $collage['collage_d_fourth_block_main_page']['url'] ? $collage['collage_d_fourth_block_main_page']['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage['collage_a_fourth_block_main_page']['alt']; ?>">
                 </div> 
             </div>
 
             <div id="card-4" class="collage-4"> 
-                <div class="front"> 
-                    <?php echo getImage('collage_e_fourth_block_main_page', 'big'); ?>
+                <div class="front">
+                    <img src="<?php echo $collage['collage_e_fourth_block_main_page']['url'] ? $collage['collage_e_fourth_block_main_page']['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage['collage_a_fourth_block_main_page']['alt']; ?>">
                 </div> 
                 <div class="back">
-                    <?php echo getImage('collage_f_fourth_block_main_page', 'big'); ?>
+                    <img src="<?php echo $collage['collage_f_fourth_block_main_page']['url'] ? $collage['collage_f_fourth_block_main_page']['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage['collage_a_fourth_block_main_page']['alt']; ?>">
                 </div> 
             </div>
 
             <div id="card-3" class="collage-3"> 
-                <div class="front"> 
-                    <?php echo getImage('collage_g_fourth_block_main_page', 'big'); ?>
+                <div class="front">
+                    <img src="<?php echo $collage['collage_g_fourth_block_main_page']['url'] ? $collage['collage_g_fourth_block_main_page']['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage['collage_a_fourth_block_main_page']['alt']; ?>">
                 </div> 
                 <div class="back">
-                    <?php echo getImage('collage_h_fourth_block_main_page', 'big'); ?>
+                    <img src="<?php echo $collage['collage_h_fourth_block_main_page']['url'] ? $collage['collage_h_fourth_block_main_page']['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage['collage_a_fourth_block_main_page']['alt']; ?>">
                 </div> 
             </div>
 
             <div id="card-5" class="collage-5"> 
-                <div class="front"> 
-                    <?php echo getImage('collage_i_fourth_block_main_page', 'big'); ?>
+                <div class="front">
+                    <img src="<?php echo $collage['collage_i_fourth_block_main_page']['url'] ? $collage['collage_i_fourth_block_main_page']['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage['collage_a_fourth_block_main_page']['alt']; ?>">
                 </div> 
                 <div class="back">
-                    <?php echo getImage('collage_j_fourth_block_main_page', 'big'); ?>
+                    <img src="<?php echo $collage['collage_j_fourth_block_main_page']['url'] ? $collage['collage_j_fourth_block_main_page']['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage['collage_a_fourth_block_main_page']['alt']; ?>">
                 </div> 
             </div>
 
             <div id="card-6" class="collage-6"> 
-                <div class="front"> 
-                    <?php echo getImage('collage_k_fourth_block_main_page', 'big'); ?>
+                <div class="front">
+                    <img src="<?php echo $collage['collage_k_fourth_block_main_page']['url'] ? $collage['collage_k_fourth_block_main_page']['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage['collage_a_fourth_block_main_page']['alt']; ?>">
                 </div> 
                 <div class="back">
-                    <?php echo getImage('collage_l_fourth_block_main_page', 'big'); ?>
+                    <img src="<?php echo $collage['collage_l_fourth_block_main_page']['url'] ? $collage['collage_l_fourth_block_main_page']['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage['collage_a_fourth_block_main_page']['alt']; ?>">
                 </div> 
             </div>
         </div>
@@ -204,7 +202,7 @@ get_header();
         <!-- end collage-block -->
 
         <!-- start block-description-second -->
-
+        <?php if(get_post_meta( get_the_ID(), 'enable_block_d_section_main_page', $single = true ) == 'yes'){ ?>
 		<div class="container-fluid block-description block-description-second">
             <div class="container">
                 <div class="row">
@@ -228,7 +226,9 @@ get_header();
 			    </div>
 			</div>
 		</div>
+        <?php } ?>
 
+        <?php if(get_post_meta( get_the_ID(), 'enable_block_e_section_main_page', $single = true ) == 'yes'){ ?>
         <div class="container-fluid bg-form-block">
             <div class="container">
                 <div class="row">
@@ -243,34 +243,21 @@ get_header();
                                 </div>
                             </div>
                                                        
-                            <div class="form">
-                                <div class="left-side">
-                                    <p>Имя*:
-                                        <input type="text" class="clear" id="name_full_form" placeholder="Ваше имя">
-                                    </p>
-                                    <p>E-mail*:
-                                        <input type="text" class="clear" id="email_full_form" placeholder="Ваш Email">
-                                    </p>
-                                    <p>Телефон:
-                                        <input type="text" class="clear" id="phone_full_form" placeholder="Ваш телефон">
-                                    </p>
-                                </div>
-                                <div class="right-side">
-                                    <p>Опишите задачу своими словами:</p>
-                                    <textarea  class="clear" id="comment_full_form" placeholder="Ваше сообщение"></textarea>
-                                    <div class="agree">
-                                        <input id="i-take" type="checkbox">
-                                        <label for="i-take">Согласен на обработку персональных данных</label>
-                                    </div>
-                                    <input type="submit" class="agree-button no-active" value="Отправить">
-                                </div>
-                            </div>
+                            <?php
+                                $forms_a = get_post_meta( get_the_ID(), 'contact_form_block_main_page', $single = true );
+
+                                if($forms_a){
+                                    echo do_shortcode('[contact-form-7 id=" ' . $forms_a . ' "]'); 
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <?php } ?>
         
+        <?php if(get_post_meta( get_the_ID(), 'enable_block_f_section_main_page', $single = true ) == 'yes'){ ?>
 		<?php
 			$args = array(
 				'numberposts' => 0,
@@ -288,7 +275,7 @@ get_header();
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="title">Отзывы клиентов</p>
+                        <p class="title"><?php echo get_post_meta( get_the_ID(), 'text_reviews_block_main_page', $single = true ); ?></p>
 
                         <div class="owl-carousel owl-theme reviews-slider">
 							<?php
@@ -317,56 +304,8 @@ get_header();
         </div>
 		<?php } ?>
         <!-- end block-description-second -->
-
+        <?php } ?>
     </main>
     <!-- end main-index -->
-    
-<script type="text/javascript">
-    $(document).ready(function() {
-        if($(window).load()){
-            $(".clear").val('');
-            $('#i-take').removeAttr('checked');
-            $(".agree-button").replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
-        }
         
-        var checkbox = $("#i-take");
-        
-        checkbox.change(function(event) {
-            var checkbox = event.target;
-            if (checkbox.checked) {
-                $(".agree-button").replaceWith('<input type="submit" class="agree-button active" onclick="sendFullForm();" value="Отправить">');
-            }else{
-                $(".agree-button").replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
-            }
-        });
-    });
-</script>
-
-<script type="text/javascript">
-//форма обратной связи
-function sendFullForm() {
-var data = {
-    'action': 'sendFullForm',
-    'name' : $('#name_full_form').val(),
-    'phone' : $('#phone_full_form').val(),
-    'email' : $('#email_full_form').val(),
-    'comment' : $('#comment_full_form').val(),
-};
-
-$.ajax({
-    url:'http://' + location.host + '/wp-admin/admin-ajax.php',
-    data:data, // данные
-    type:'POST', // тип запроса
-    success:function(data){
-        swal(data.message);
-        
-        if(data.status == 200) {
-            $('#i-take').removeAttr('checked');
-            $( ".agree-button" ).replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
-        }
-    }
-});
-};
-</script>
-    
 <?php get_footer(); ?>

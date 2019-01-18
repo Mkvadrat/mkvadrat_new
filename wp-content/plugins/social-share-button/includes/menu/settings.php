@@ -95,7 +95,7 @@ else{
 
 
 			?>
-			<div class="updated"><p><strong><?php _e('Changes Saved.', 'social_share_button' ); ?></strong></p></div>
+			<div class="updated"><p><strong><?php _e('Changes Saved.', 'social-share-button' ); ?></strong></p></div>
 	
 			<?php
 			} 
@@ -111,7 +111,7 @@ else{
 
 <div class="wrap">
 
-	<div id="icon-tools" class="icon32"><br></div><?php echo "<h2>".social_share_button_plugin_name.' '.__('Settings', 'social_share_button')."</h2>";?>
+	<div id="icon-tools" class="icon32"><br></div><?php echo "<h2>".social_share_button_plugin_name.' '.__('Settings', 'social-share-button')."</h2>";?>
 		<form  method="post" action="<?php echo str_replace( '%7E', '~', esc_url($_SERVER['REQUEST_URI'])); ?>">
 	<input type="hidden" name="social_share_button_hidden" value="Y">
         <?php settings_fields( 'social_share_button_plugin_options' );
@@ -123,50 +123,50 @@ else{
     <div class="para-settings wp-share-button-settings">
     
         <ul class="tab-nav"> 
-            <li nav="1" class="nav1 active"><?php _e('Options','social_share_button'); ?></li>
-            <li nav="2" class="nav2"><?php _e('Style','social_share_button'); ?></li>
-            <li nav="3" class="nav3"><?php _e('Display','social_share_button'); ?></li>                   
-            <li nav="4" class="nav4"><?php _e('Shortcode','social_share_button'); ?></li>
-            <li nav="5" class="nav5"><?php _e('Help & Support','social_share_button'); ?></li>            
+            <li nav="1" class="nav1 active"><?php _e('Options','social-share-button'); ?></li>
+            <li nav="2" class="nav2"><?php _e('Style','social-share-button'); ?></li>
+            <li nav="3" class="nav3"><?php _e('Display','social-share-button'); ?></li>
+            <li nav="4" class="nav4"><?php _e('Shortcode','social-share-button'); ?></li>
+            <li nav="5" class="nav5"><?php _e('Help & Support','social-share-button'); ?></li>
                                  
         </ul> <!-- tab-nav end --> 
 		<ul class="box">
        		<li style="display: block;" class="box1 tab-box active">
             
                 <div class="option-box">
-                    <p class="option-title"><?php _e('Total max button display','social_share_button'); ?></p>
+                    <p class="option-title"><?php _e('Total max button display','social-share-button'); ?></p>
                     <p class="option-info"></p> 
                     
                     <input size="15" type="text" name="social_share_button_total" value="<?php if(!empty($social_share_button_total)) echo $social_share_button_total; else echo 4; ?>" />
 				</div>          
             
                 <div class="option-box">
-                    <p class="option-title"><?php _e('Display more buttons','social_share_button'); ?></p>
+                    <p class="option-title"><?php _e('Display more buttons','social-share-button'); ?></p>
                     <p class="option-info"></p> 
                     <select name="social_share_button_more_display" >
-                    <option <?php if($social_share_button_more_display=='yes') echo 'selected'; ?> value="yes" >Yes</option>
-                    <option <?php if($social_share_button_more_display=='no') echo 'selected'; ?> value="no" >No</option>
+                    <option <?php if($social_share_button_more_display=='yes') echo 'selected'; ?> value="yes" ><?php echo __('Yes','social-share-button'); ?></option>
+                    <option <?php if($social_share_button_more_display=='no') echo 'selected'; ?> value="no" ><?php echo __('No','social-share-button'); ?></option>
                     </select>
 
 				</div>
 
                 <div class="option-box">
-                    <p class="option-title"><?php _e('Display total count','social_share_button'); ?></p>
+                    <p class="option-title"><?php _e('Display total count','social-share-button'); ?></p>
                     <p class="option-info"></p>
                     <select name="social_share_button_display_total_count" >
-                        <option <?php if($social_share_button_display_total_count=='yes') echo 'selected'; ?> value="yes" >Yes</option>
-                        <option <?php if($social_share_button_display_total_count=='no') echo 'selected'; ?> value="no" >No</option>
+                        <option <?php if($social_share_button_display_total_count=='yes') echo 'selected'; ?> value="yes" ><?php echo __('Yes','social-share-button'); ?></option>
+                        <option <?php if($social_share_button_display_total_count=='no') echo 'selected'; ?> value="no" ><?php echo __('No','social-share-button'); ?></option>
                     </select>
 
                 </div>
 
 
                 <div class="option-box">
-                    <p class="option-title"><?php _e('Count format','social_share_button'); ?></p>
-                    <p class="option-info"><?php _e('Full format will display whole number(4000) and short format will display as 4k (i.e 4000).','social_share_button'); ?></p> 
+                    <p class="option-title"><?php _e('Count format','social-share-button'); ?></p>
+                    <p class="option-info"><?php _e('Full format will display whole number(4000) and short format will display as 4k (i.e 4000).','social-share-button'); ?></p>
                     <select name="social_share_button_count_format" >
-                    <option <?php if($social_share_button_count_format=='full') echo 'selected'; ?> value="full" >Full</option>
-                    <option <?php if($social_share_button_count_format=='short') echo 'selected'; ?> value="short" >Short</option>
+                    <option <?php if($social_share_button_count_format=='full') echo 'selected'; ?> value="full" ><?php echo __('Full','social-share-button'); ?></option>
+                    <option <?php if($social_share_button_count_format=='short') echo 'selected'; ?> value="short" ><?php echo __('Short','social-share-button'); ?></option>
                     </select>
 
 				</div>             
@@ -174,14 +174,14 @@ else{
             
             
                 <div class="option-box">
-                    <p class="option-title"><?php _e('Sharing sites','social_share_button'); ?></p>
-                    <p class="option-info"><?php _e('you can pass values for url and title dynamically using following string on share url, <ul><li>TITLE = Post Title </li><li>URL = Post url</li> </ul>','social_share_button'); ?></p>
+                    <p class="option-title"><?php _e('Sharing sites','social-share-button'); ?></p>
+                    <p class="option-info"><?php _e('you can pass values for url and title dynamically using following string on share url, <ul><li>TITLE = Post Title </li><li>URL = Post url</li> </ul>','social-share-button'); ?></p>
                     
                     
                     <table class="widefat " id="social_share_button_sites">
                         <thead>
                         	<tr>
-                            	<th><?php _e('Sort','social_share_button'); ?></th><th><?php _e('Site name','social_share_button'); ?></th><th><?php _e('ID','social_share_button'); ?></th><th><?php _e('Share URL','social_share_button'); ?></th><th title="Font Awesome Icon ID"><?php _e('FA Icon','social_share_button'); ?></th><th><?php _e('Visiblity','social_share_button'); ?></th><th><?php _e('Remove','social_share_button'); ?></th>
+                            	<th><?php _e('Sort','social-share-button'); ?></th><th><?php _e('Site name','social-share-button'); ?></th><th><?php _e('ID','social-share-button'); ?></th><th><?php _e('Share URL','social-share-button'); ?></th><th title="Font Awesome Icon ID"><?php _e('FA Icon','social-share-button'); ?></th><th><?php _e('Visibility','social-share-button'); ?></th><th><?php _e('Remove','social-share-button'); ?></th>
                        		</tr>  
 						</thead>
                     <?php 
@@ -274,14 +274,14 @@ else{
                             
                 	</table> 
                     <br/>
-                    <div class="button add-site" ><?php _e('Add more','social_share_button'); ?></div>
-                    <div class="button reset-site" ><?php _e('Reset','social_share_button'); ?></div>
+                    <div class="button add-site" ><?php _e('Add more','social-share-button'); ?></div>
+                    <div class="button reset-site" ><?php _e('Reset','social-share-button'); ?></div>
                     
             	</div>
 			</li>
             <li style="display: none;" class="box2 tab-box">
                 <div class="option-box">
-                    <p class="option-title"><?php _e('Themes','social_share_button'); ?></p>
+                    <p class="option-title"><?php _e('Themes','social-share-button'); ?></p>
                     <p class="option-info"></p> 
 
                     <?php
@@ -329,7 +329,7 @@ else{
             <li style="display: none;" class="box3 tab-box">
             
                 <div class="option-box">
-                    <p class="option-title"><?php _e('Display on these automatically','social_share_button'); ?></p>
+                    <p class="option-title"><?php _e('Display on these automatically','social-share-button'); ?></p>
                     <p class="option-info"></p> 
                     
                     <?php
@@ -338,11 +338,11 @@ else{
                     <table class="widefat " id="social_share_button_display">
                     <thead>
                     <tr>
-                    	<th><?php _e('Display on','social_share_button'); ?></th>
-                        <th><?php _e('Position','social_share_button'); ?></th>
-                        <th><?php _e('Postypes','social_share_button'); ?></th>
-                        <th><?php _e('Page type','social_share_button'); ?></th>
-                        <th><?php _e('Remove','social_share_button'); ?></th>                                             
+                    	<th><?php _e('Display on','social-share-button'); ?></th>
+                        <th><?php _e('Position','social-share-button'); ?></th>
+                        <th><?php _e('Postypes','social-share-button'); ?></th>
+                        <th><?php _e('Page type','social-share-button'); ?></th>
+                        <th><?php _e('Remove','social-share-button'); ?></th>
                                                
                     </tr>
                     </thead>
@@ -375,16 +375,16 @@ else{
                             <?php $location = $button_info['location']; ?>
                             
                             <select name="social_share_button_display[<?php echo $key; ?>][location]" >
-                                <option <?php if($location=='none') echo 'selected'; ?> value="none"><?php _e('None','social_share_button'); ?></option>                           
-                                <option <?php if($location=='content') echo 'selected'; ?> value="content"><?php _e('Content','social_share_button'); ?></option>
+                                <option <?php if($location=='none') echo 'selected'; ?> value="none"><?php _e('None','social-share-button'); ?></option>
+                                <option <?php if($location=='content') echo 'selected'; ?> value="content"><?php _e('Content','social-share-button'); ?></option>
 
                             </select>
                             </td>
                             <td>
                             <?php $position= $button_info['position']; ?>
                             <select name="social_share_button_display[<?php echo $key; ?>][position]" >
-                                <option <?php if($position=='none') echo 'selected'; ?> value="none"><?php _e('None','social_share_button'); ?></option>                            	<option <?php if($position=='before') echo 'selected'; ?> value="before"><?php _e('Before','social_share_button'); ?></option>
-                                <option <?php if($position=='after') echo 'selected'; ?> value="after"><?php _e('After','social_share_button'); ?></option>                            
+                                <option <?php if($position=='none') echo 'selected'; ?> value="none"><?php _e('None','social-share-button'); ?></option>                            	<option <?php if($position=='before') echo 'selected'; ?> value="before"><?php _e('Before','social-share-button'); ?></option>
+                                <option <?php if($position=='after') echo 'selected'; ?> value="after"><?php _e('After','social-share-button'); ?></option>
                             </select>
                             </td>
                             
@@ -395,7 +395,7 @@ else{
 
 							?>
                             <select name="social_share_button_display[<?php echo $key; ?>][posttype]" >
-                            <option <?php if($posttype=='none') echo 'selected'; ?> value="none"><?php _e('None','social_share_button'); ?></option>
+                            <option <?php if($posttype=='none') echo 'selected'; ?> value="none"><?php _e('None','social-share-button'); ?></option>
                             <?php
                             foreach ( $post_types as $post_key ){
 								
@@ -418,10 +418,10 @@ else{
 							$page_type = $button_info['page_type'];
 							 ?>
                             <select name="social_share_button_display[<?php echo $key; ?>][page_type]" >
-                                <option <?php if($page_type=='none') echo 'selected'; ?> value="none"><?php _e('None','social_share_button'); ?></option>                            
-                                <option <?php if($page_type=='single') echo 'selected'; ?> value="single"><?php _e('Single','social_share_button'); ?></option>
-                                <option <?php if($page_type=='archive') echo 'selected'; ?> value="archive"><?php _e('Archive','social_share_button'); ?></option>
-                                <option <?php if($page_type=='home') echo 'selected'; ?> value="home"><?php _e('Home','social_share_button'); ?></option>                                                  
+                                <option <?php if($page_type=='none') echo 'selected'; ?> value="none"><?php _e('None','social-share-button'); ?></option>
+                                <option <?php if($page_type=='single') echo 'selected'; ?> value="single"><?php _e('Single','social-share-button'); ?></option>
+                                <option <?php if($page_type=='archive') echo 'selected'; ?> value="archive"><?php _e('Archive','social-share-button'); ?></option>
+                                <option <?php if($page_type=='home') echo 'selected'; ?> value="home"><?php _e('Home','social-share-button'); ?></option>
                             </select>
                             </td>
                             <td>
@@ -443,7 +443,7 @@ else{
                     
                     
                     <br/>
-                    <div class="button add-display-filter" ><?php _e('Add more','social_share_button'); ?></div>
+                    <div class="button add-display-filter" ><?php _e('Add more','social-share-button'); ?></div>
                     
 				</div>
             
@@ -452,8 +452,8 @@ else{
             
             
                 <div class="option-box">
-                    <p class="option-title"><?php _e('Shortcode','social_share_button'); ?></p>
-                    <p class="option-info"><?php _e('Please use following shortcode inside loop on your theme files','social_share_button'); ?></p> 
+                    <p class="option-title"><?php _e('Shortcode','social-share-button'); ?></p>
+                    <p class="option-info"><?php _e('Please use following shortcode inside loop on your theme files','social-share-button'); ?></p>
                     <?php echo '&lt;?php echo do_shortcode("[social_share_button]"); ?>'; ?>
 				</div>
                       
@@ -463,23 +463,23 @@ else{
             
             
 				<div class="option-box">
-                    <p class="option-title"><?php _e('Plugin info ?','social_share_button'); ?></p>
+                    <p class="option-title"><?php _e('Plugin info ?','social-share-button'); ?></p>
                     <p class="option-info">
 					<?php
                     if(social_share_button_customer_type=="free")
                         {
-							$html = sprintf('You are using %s version %s of %s, To get more feature you could try our premium version.',social_share_button_customer_type,social_share_button_plugin_version, social_share_button_plugin_name);
+							echo sprintf(__('You are using %s version %s of %s, To get more feature you could try our premium version.', 'social-share-button'),social_share_button_customer_type,social_share_button_plugin_version, social_share_button_plugin_name);
 							
-							_e($html,'social_share_button');
+
 							echo '<br />';
-							$html = sprintf('<a href="%s">%s</a>',social_share_button_plugin_name,social_share_button_pro_url);							
-							_e($html,'social_share_button');
+							echo sprintf('<a href="%s">%s</a>',social_share_button_plugin_name,social_share_button_pro_url);
+
                             
                         }
                     else
                         {
-							$html = sprintf('Thanks for using <strong> premium version %s of %s ',social_share_button_plugin_version,social_share_button_plugin_name);							
-							_e($html,'social_share_button');	
+							echo sprintf(__('Thanks for using <strong> premium version %s of %s','social-share-button'),social_share_button_plugin_version,social_share_button_plugin_name);
+
 							
                         }
 
@@ -493,12 +493,9 @@ else{
                 
                 
 				<div class="option-box">
-                    <p class="option-title"><?php _e('Need Help ?','social_share_button'); ?></p>
-                    <p class="option-info"><?php _e('Feel free to contact with any issue for this plugin, Ask any question via forum %s ','social_share_button'); 
-					
-					echo sprintf('Feel free to contact with any issue for this plugin, Ask any question via forum <a href="%s">%s</a> (free)',social_share_button_qa_url, social_share_button_qa_url);
-					echo '<br />';
-					echo sprintf('please read documentation here <a href="%s">%s</a>',social_share_button_tutorial_doc_url,social_share_button_tutorial_doc_url);
+                    <p class="option-title"><?php _e('Need Help ?','social-share-button'); ?></p>
+                    <p class="option-info"><?php
+					echo sprintf(__('please read documentation here <a href="%s">%s</a>','social-share-button'),social_share_button_tutorial_doc_url,social_share_button_tutorial_doc_url);
 					
 					?>
                     </p>
@@ -506,10 +503,10 @@ else{
                 </div>
                 
 				<div class="option-box">
-                    <p class="option-title"><?php _e('Submit reviews','social_share_button'); ?></p>
+                    <p class="option-title"><?php _e('Submit reviews','social-share-button'); ?></p>
                     <p class="option-info">
                     <?php
-                    _e('We are working hard to build some awesome plugins for you and spend thousand hour for plugins. we wish your three(3) minute by submitting five star reviews at wordpress.org. if you have any issue please submit at forum.','social_share_button');
+                    _e('We are working hard to build some awesome plugins for you and spend thousand hour for plugins. we wish your three(3) minute by submitting five star reviews at wordpress.org. if you have any issue please submit at forum.','social-share-button');
 					
 					?>
                     
@@ -547,7 +544,7 @@ else{
 
                 <p class="submit">
 	                <?php wp_nonce_field( 'social_share_button_nonce' ); ?>
-                    <input class="button button-primary" type="submit" name="Submit" value="<?php _e('Save Changes','social_share_button' ); ?>" />
+                    <input class="button button-primary" type="submit" name="Submit" value="<?php _e('Save Changes','social-share-button' ); ?>" />
                 </p>
 		</form>
 

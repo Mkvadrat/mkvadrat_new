@@ -255,16 +255,16 @@ function social_share_button_add_display_filter()
                         <tr>
                             <td>
                             <select name="social_share_button_display[<?php echo $key; ?>][location]" >
-                                <option value="none">None</option>                           
-                                <option value="content">Content</option>
+                                <option value="none"><?php echo __('None','social-share-button'); ?></option>
+                                <option value="content"><?php echo __('Content','social-share-button'); ?></option>
                             </select>
                             </td>
                             <td>
                             
                             <select name="social_share_button_display[<?php echo $key; ?>][position]" >
-                                <option value="none">None</option>                            
-                                <option value="before">Before</option>
-                                <option value="after">After</option>                            
+                                <option value="none"><?php echo __('None','social-share-button'); ?></option>
+                                <option value="before"><?php echo __('Before','social-share-button'); ?></option>
+                                <option value="after"><?php echo __('After','social-share-button'); ?></option>
                             </select>
                             </td>
                             
@@ -274,7 +274,7 @@ function social_share_button_add_display_filter()
 
 							?>
                             <select name="social_share_button_display[<?php echo $key; ?>][posttype]" >
-                            <option value="none">None</option>
+                            <option value="none"><?php echo __('None','social-share-button'); ?></option>
                             <?php
                             foreach ( $post_types as $post_key ){
 								
@@ -292,10 +292,10 @@ function social_share_button_add_display_filter()
                                                 
                             <td>
                             <select name="social_share_button_display[<?php echo $key; ?>][page_type]" >
-                                <option value="none">None</option>                            
-                                <option value="single">Single</option>
-                                <option value="archive">Archive</option>
-                                <option value="home">Home</option>                                                  
+                                <option value="none"><?php echo __('None','social-share-button'); ?></option>
+                                <option value="single"><?php echo __('Single','social-share-button'); ?></option>
+                                <option value="archive"><?php echo __('Archive','social-share-button'); ?></option>
+                                <option value="home"><?php echo __('Home','social-share-button'); ?></option>
                             </select>
                             </td>
                             <td>
@@ -347,7 +347,7 @@ function social_share_button_add_site(){
                    
                    
                             <td>
-                            <span class="remove">X</span>
+                            <span class="remove"><i class="fa fa-time"></i> </span>
                             <input name="social_share_button_sites[<?php echo $site_name; ?>][can_remove]" type="hidden" value="yes" />
                             </td>
                             

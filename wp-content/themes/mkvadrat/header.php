@@ -23,42 +23,6 @@ Version: 1.0
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo mkvadrat_wp_title('','', true, 'right'); ?></title>
-	
-    <meta name="description" content="краткое описание страницы">
-    <meta name="keywords" CONTENT="краткое описание страницы">
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/jquery-2.1.1.min.js"></script>
-	
-	<!-- Flip -->
-	<script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/jquery.flip.min.js"></script>
-	
-    <!-- Bootstrap -->
-    <link href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/reset.css">
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/fonts.css">
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/styles.css">
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/media.css">
-
-    <!-- OWL-CAROUSEL -->
-    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/owl.carousel.min.js"></script>
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/owl.theme.default.min.css">
-
-    <!-- FANCYBOX -->
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
-    <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-    <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/jquery.mousewheel-3.0.6.pack.js"></script>
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
-    <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
-    <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
-    <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
-    <script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
-	
-	<!-- SWEETALERT -->
-	<script type="text/javascript" src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/sweetalert.min.js"></script>
-	<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/sweetalert.css">
 
     <!-- HTML5 for IE -->
     <!--[if IE]>
@@ -71,10 +35,7 @@ Version: 1.0
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	
-	<!-- Main file -->
-	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/common.js"></script>
-	
+		
 	<?php wp_head(); ?>
 	
 </head>
@@ -133,7 +94,7 @@ Version: 1.0
                             <button type="button" class="menu-button hidden-sm hidden-md hidden-lg"><i class="fa fa-bars" aria-hidden="true"></i></button>
                             <div class="menu-items">
                                 <div class="left-side">
-                                    <?php echo getMeta('address_agency_header_main_page'); ?>
+                                    <?php echo get_field('address_agency_header_main_page', 21); ?>
 									<?php
 										if (has_nav_menu('left_menu')){
 											wp_nav_menu( array(
@@ -158,7 +119,7 @@ Version: 1.0
                                 </div>
                                 <div class="right-side">
                                     <div class="back-call">
-                                        <?php echo getMeta('phone_number_agency_header_main_page'); ?>
+                                        <?php echo get_field('phone_number_agency_header_main_page', 21); ?>
                                     </div>
 									<?php
 										if (has_nav_menu('right_menu')){
@@ -185,9 +146,9 @@ Version: 1.0
                             </div>
                         </nav>
 						
-						<?php echo getMeta('primary_title_main_page'); ?>
+						<?php echo get_field('primary_title_main_page', 21); ?>
 
-                        <div class="scene">
+                        <!--<div class="scene">
                             <div class="cube">
                                 <div class="side back">
                                     <div class="guides"></div>
@@ -206,7 +167,7 @@ Version: 1.0
                                     <span>FRONT</span>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>
