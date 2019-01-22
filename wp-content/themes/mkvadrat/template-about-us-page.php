@@ -59,14 +59,14 @@ get_header();
                 <div class="col-md-12">
                     <?php echo $our_family_block; ?>
                     <?php
-						$results = getProductsMeta(get_the_ID(), 'developers_about_us_page');
+						$results = get_field('developers_about_us_page', get_the_ID());
 							
 						if($results){
                     ?>
                     <ul class="developer-list">
                         <?php
                             foreach($results as $develop){
-                                $image = getImageCourse($develop->ID, 'miniature_developers_category', 'small');
+                                $image = wp_get_attachment_image(get_post_meta( $develop->ID, 'miniature_developers_category', $single = true ), 'full');
                                 $name = $develop->post_title;
                                 $descr = html_entity_decode( get_post_meta( $develop->ID, 'position_developers_category', $single = true ));
                         ?>
@@ -119,20 +119,21 @@ get_header();
 						<?php } ?>
 						
 						<?php
-							$project_list = getProductsMeta(get_the_ID(), 'projects_company_block_about_us_page');
+							$project_list = get_field('projects_company_block_about_us_page', get_the_ID());
 								
 							if($results){
 						?>
                         <ul class="links-list">
 							<?php
 								foreach($project_list as $list){
-									$logo = getImageCourse($list->ID, 'logo_image_projects_category', 'small');
+                                    $image = wp_get_attachment_image(get_post_meta( $list->ID, 'logo_image_projects_category', $single = true ), 'full');
 									$link = get_permalink($list->ID);
 									$style =  get_post_meta( $list->ID, 'background_color_about_us_page', $single = true ); 
 							?>
                             <li style="background-color: <?php echo $style; ?>"><a href="<?php echo $link; ?>"><?php echo $logo; ?></a></li>
 							<?php } ?>
                         </ul>
+                        <?php wp_reset_postdata(); ?>
 						<?php } ?>
                     </div>
                 </div>

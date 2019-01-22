@@ -44,7 +44,7 @@ get_header();
                     <div class="two-halves-block">
                         <div class="right-side">
                             <div class="block-map-top-right">
-                                <div id="moscow" style="width:240px; height:240px"></div>
+                                <div id="moscow" style="width:100%;"></div>
                                 <script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
                                 <script type="text/javascript">
                                     var moscowMap, moscowPlacemark, moscowcoords;
@@ -80,7 +80,7 @@ get_header();
                         </div>
                         <div class="right-side">
                             <div class="block-map-top-left">
-                                <div id="crimea" style="width:240px; height:240px"></div>
+                                <div id="crimea" style="width:100%;"></div>
                                 <script type="text/javascript">
                                     var crimeaMap, crimeaPlacemark, crimeacoords;
                                     ymaps.ready(init);
@@ -109,7 +109,7 @@ get_header();
                     <div class="two-halves-block">
                         <div class="right-side">
                             <div class="block-map-top-right">
-                                <div id="sevastopol" style="width:240px; height:240px"></div>
+                                <div id="sevastopol" style="width:100%;"></div>
                                 <script type="text/javascript">
                                     var sevastopolMap, sevastopolPlacemark, sevastopolcoords;
                                     ymaps.ready(init);
@@ -146,28 +146,14 @@ get_header();
                 <div class="row">
                     <div class="col-md-12">
                         <div class="two-halves-block block-form">
-                            <div class="left-side">
-                                <p class="title">Форма для обратной связи</p>
-                                <span>
-                                    <p>Имя*:
-                                        <input type="text" class="clear" id="name" placeholder="Имя">
-                                    </p>
-                                    <p>E-mail*:
-                                        <input type="text" class="clear" id="email" placeholder="E-mail">
-                                    </p>
-                                    <p>Телефон:
-                                        <input type="text" class="clear" id="phone" placeholder="Телефон">
-                                    </p>
-                                    <p>Сообщение:
-                                        <textarea class="clear" id="comment" placeholder="Сообщение"></textarea>
-                                    </p>
-                                    <span class="agree">
-                                        <input id="i-take" type="checkbox">
-                                        <label for="i-take">Согласен на обработку персональных данных</label>
-                                    </span>
-                                    <input type="submit" class="agree-button no-active" value="Отправить">
-                                </span>
-                            </div>
+                            <?php
+                                $forms_a = get_post_meta( get_the_ID(), 'contact_form_block_contact_page', $single = true );
+
+                                if($forms_a){
+                                    echo do_shortcode('[contact-form-7 id=" ' . $forms_a . ' "]'); 
+                                }
+                            ?>
+                            
                             <div class="right-side">
                                 <?php echo $link; ?>
                             </div>
@@ -180,52 +166,5 @@ get_header();
     </main>
 
     <!-- end main-contacts -->
-
-<script type="text/javascript">
-    $(document).ready(function() {
-        if($(window).load()){
-            $(".clear").val('');
-            $('#i-take').removeAttr('checked');
-            $(".agree-button").replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
-        }
-        
-        var checkbox = $("#i-take");
-        
-        checkbox.change(function(event) {
-            var checkbox = event.target;
-            if (checkbox.checked) {
-                $(".agree-button").replaceWith('<input type="submit" class="agree-button active" onclick="SendForm();" value="Отправить">');
-            }else{
-                $(".agree-button").replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
-            }
-        });
-    });
-</script>
-    
-<script type="text/javascript">
-//форма обратной связи
-function SendForm() {
-	var data = {
-		'action': 'SendForm',
-		'name' : $('#name').val(),
-        'phone' : $('#phone').val(),
-		'email' : $('#email').val(),
-		'comment' : $('#comment').val()
-	};
-	$.ajax({
-		url:'http://' + location.host + '/wp-admin/admin-ajax.php',
-		data:data,
-		type:'POST',
-		success:function(data){
-            swal(data.message);
-            
-            if(data.status == 200) {
-                $('#i-take').removeAttr('checked');
-                $( ".agree-button" ).replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
-            }
-		}
-	});
-};
-</script>
 
 <?php get_footer(); ?>

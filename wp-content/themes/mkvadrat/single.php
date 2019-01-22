@@ -14,14 +14,14 @@ get_header();
     <!-- start main-works-in -->
     <?php
         $header = html_entity_decode( get_post_meta( get_the_ID(), 'primary_title_projects_page', $single = true ));
-        $image = getImageCourse( get_the_ID(), 'main_image_projects_page', 'big');
+        $image = wp_get_attachment_image(get_post_meta( get_the_ID(), 'main_image_projects_page', $single = true ), 'full');
         $description = html_entity_decode( get_post_meta( get_the_ID(), 'description_area_projects_page', $single = true ));
         $information = html_entity_decode( get_post_meta( get_the_ID(), 'information_projects_page', $single = true ));
         $block_a = get_post_meta( get_the_ID(), 'a_applied_technologies_projects_page', $single = true );
         $block_b = get_post_meta( get_the_ID(), 'b_applied_technologies_projects_page', $single = true );
         $block_c = get_post_meta( get_the_ID(), 'c_applied_technologies_projects_page', $single = true );
         $block_d = get_post_meta( get_the_ID(), 'd_applied_technologies_projects_page', $single = true );
-        $logo = getImageCourse( get_the_ID(), 'logo_image_projects_page', 'small');
+        $logo = wp_get_attachment_image(get_post_meta( get_the_ID(), 'logo_image_projects_page', $single = true ), 'full');
         $color =  get_post_meta( get_the_ID(), 'preview_color_projects_page', $single = true );
         $preview = html_entity_decode( get_post_meta( get_the_ID(), 'preview_projects_page', $single = true ));
         $designing = html_entity_decode( get_post_meta( get_the_ID(), 'title_text_designing_block_projects_page', $single = true ));
@@ -41,14 +41,14 @@ get_header();
         $design_block_e = html_entity_decode( get_post_meta( get_the_ID(), 'e_design_block_projects_page', $single = true ));
         $design_block_f = html_entity_decode( get_post_meta( get_the_ID(), 'f_design_block_projects_page', $single = true ));
         $enable_collage = get_post_meta( get_the_ID(), 'enable_collage_projects_page', $single = true );
-        $collage_a = getImage('collage_a_projects_page', 'big');
-        $collage_b = getImage('collage_b_projects_page', 'big');
-        $collage_c = getImage('collage_c_projects_page', 'big');
-        $collage_d = getImage('collage_d_projects_page', 'big');
-        $collage_e = getImage('collage_e_projects_page', 'big');
-        $collage_f = getImage('collage_f_projects_page', 'big');
-        $collage_g = getImage('collage_g_projects_page', 'big');
-        $collage_h = getImage('collage_h_projects_page', 'big');
+        $collage_a = get_field('collage_a_projects_page', get_the_ID());
+        $collage_b = get_field('collage_b_projects_page', get_the_ID());
+        $collage_c = get_field('collage_c_projects_page', get_the_ID());
+        $collage_d = get_field('collage_d_projects_page', get_the_ID());
+        $collage_e = get_field('collage_e_projects_page', get_the_ID());
+        $collage_f = get_field('collage_f_projects_page', get_the_ID());
+        $collage_g = get_field('collage_g_projects_page', get_the_ID());
+        $collage_h = get_field('collage_h_projects_page', get_the_ID());
         $develop = html_entity_decode( get_post_meta( get_the_ID(), 'title_text_develop_block_projects_page', $single = true ));
         $develop_block_a = html_entity_decode( get_post_meta( get_the_ID(), 'a_develop_block_projects_page', $single = true ));
         $develop_block_b = html_entity_decode( get_post_meta( get_the_ID(), 'b_develop_block_projects_page', $single = true ));
@@ -66,7 +66,7 @@ get_header();
         $seo_block_f = html_entity_decode( get_post_meta( get_the_ID(), 'f_seo_block_projects_page', $single = true ));
         $seo_block_g = html_entity_decode( get_post_meta( get_the_ID(), 'g_seo_block_projects_page', $single = true ));
         $seo_block_h = html_entity_decode( get_post_meta( get_the_ID(), 'h_seo_block_projects_page', $single = true ));
-        $photo_author = getImage('photo_author_reviews_text_projects_page', 'small');
+        $photo_author = get_field('photo_author_reviews_text_projects_page', get_the_ID());
         $author = html_entity_decode( get_post_meta( get_the_ID(), 'author_reviews_text_projects_page', $single = true ));
         $reviews = html_entity_decode( get_post_meta( get_the_ID(), 'reviews_text_projects_page', $single = true ));
     ?>
@@ -91,9 +91,9 @@ get_header();
                     <div class="col-md-12">
                         <div class="block-photo-project">
                             <div class="logo-project">
-                                <?php echo $logo; ?>
+                                <?php echo $logo ? $logo : '<img src="' . esc_url( get_template_directory_uri() ) . '/images/no-projects-image.png">'; ?>
                             </div>
-                            <?php echo $image; ?>
+                            <?php echo $image ? $image : '<img src="' . esc_url( get_template_directory_uri() ) . '/images/no-image.png">'; ?>
                         </div>
 
                         <div class="two-halves-block">
@@ -276,38 +276,38 @@ get_header();
         <?php if($enable_collage == 'yes'){?>
         <div class="collage-block">
             <div id="card-1" class="collage-1"> 
-                <div class="front"> 
-                    <?php echo $collage_a; ?>
+                <div class="front">
+                    <img src="<?php echo $collage_a['url'] ? $collage_a['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_a['alt']; ?>">
                 </div> 
                 <div class="back">
-                    <?php echo $collage_b; ?>
+                    <img src="<?php echo $collage_b['url'] ? $collage_b['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_b['alt']; ?>">
                 </div> 
             </div>
 
             <div id="card-3" class="collage-3"> 
-                <div class="front"> 
-                    <?php echo $collage_c; ?>
+                <div class="front">
+                    <img src="<?php echo $collage_c['url'] ? $collage_c['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_c['alt']; ?>">
                 </div> 
                 <div class="back">
-                    <?php echo $collage_d; ?>
+                    <img src="<?php echo $collage_d['url'] ? $collage_d['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_d['alt']; ?>">
                 </div> 
             </div>
 
             <div id="card-5" class="collage-5"> 
-                <div class="front"> 
-                    <?php echo $collage_e; ?>
+                <div class="front">
+                    <img src="<?php echo $collage_e['url'] ? $collage_e['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_e['alt']; ?>">
                 </div> 
                 <div class="back">
-                    <?php echo $collage_f; ?>
+                    <img src="<?php echo $collage_f['url'] ? $collage_f['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_f['alt']; ?>">
                 </div> 
             </div>
 
             <div id="card-6" class="collage-6"> 
-                <div class="front"> 
-                   <?php echo $collage_g; ?>
+                <div class="front">
+                    <img src="<?php echo $collage_g['url'] ? $collage_g['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_g['alt']; ?>">
                 </div> 
                 <div class="back">
-                    <?php echo $collage_h; ?>
+                    <img src="<?php echo $collage_h['url'] ? $collage_h['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_h['alt']; ?>">
                 </div> 
             </div>
         </div>
@@ -374,38 +374,38 @@ get_header();
 
         <div class="collage-block">
             <div id="card-1" class="collage-1"> 
-                <div class="front"> 
-                    <?php echo $collage_a; ?>
+                <div class="front">
+                    <img src="<?php echo $collage_a['url'] ? $collage_a['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_a['alt']; ?>">
                 </div> 
                 <div class="back">
-                    <?php echo $collage_b; ?>
+                    <img src="<?php echo $collage_b['url'] ? $collage_b['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_b['alt']; ?>">
                 </div> 
             </div>
 
             <div id="card-3" class="collage-3"> 
-                <div class="front"> 
-                    <?php echo $collage_c; ?>
+                <div class="front">
+                    <img src="<?php echo $collage_c['url'] ? $collage_c['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_c['alt']; ?>">
                 </div> 
                 <div class="back">
-                    <?php echo $collage_d; ?>
+                    <img src="<?php echo $collage_d['url'] ? $collage_d['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_d['alt']; ?>">
                 </div> 
             </div>
 
             <div id="card-5" class="collage-5"> 
-                <div class="front"> 
-                    <?php echo $collage_e; ?>
+                <div class="front">
+                    <img src="<?php echo $collage_e['url'] ? $collage_e['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_e['alt']; ?>">
                 </div> 
                 <div class="back">
-                    <?php echo $collage_f; ?>
+                    <img src="<?php echo $collage_f['url'] ? $collage_f['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_f['alt']; ?>">
                 </div> 
             </div>
 
             <div id="card-6" class="collage-6"> 
-                <div class="front"> 
-                   <?php echo $collage_g; ?>
+                <div class="front">
+                    <img src="<?php echo $collage_g['url'] ? $collage_g['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_g['alt']; ?>">
                 </div> 
                 <div class="back">
-                    <?php echo $collage_h; ?>
+                    <img src="<?php echo $collage_h['url'] ? $collage_h['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $collage_h['alt']; ?>">
                 </div> 
             </div>
         </div>
@@ -482,7 +482,7 @@ get_header();
                     </div>
                     <div class="col-md-6">
                         <div class="block-photo">
-                            <?php echo $photo_author; ?>
+                            <img src="<?php echo $photo_author['url'] ? $photo_author['url'] : esc_url( get_template_directory_uri() ) . '/images/no-image.png'; ?>" alt="<?php echo $photo_author['alt']; ?>">
                         </div>
                     </div>
                 </div>
@@ -505,81 +505,37 @@ get_header();
             foreach($last_projects as $projects_list){
                 $link = get_permalink($projects_list->ID);
                 $background_color = get_post_meta( $projects_list->ID, 'background_color_projects_category', $single = true );
-                $logo = getImageCourse($projects_list->ID, 'logo_image_projects_category', 'small');
+                $logo = wp_get_attachment_image(get_post_meta( $projects_list->ID, 'logo_image_projects_category', $single = true ), 'full');
         ?>
         
-            <li style="background-color: <?php echo $background_color; ?>"><a href="<?php echo $link; ?>"><?php echo $logo; ?></a></li>
+            <li style="background-color: <?php echo $background_color; ?>"><a href="<?php echo $link; ?>"><?php echo $logo ? $logo : '<img src="' . esc_url( get_template_directory_uri() ) . '/images/no-projects-image.png">'; ?></a></li>
         <?php } ?>
 		<?php wp_reset_postdata(); ?>
         <?php }else{ ?>
             <li>Проектов не найдено!</li>
         <?php } ?>
         </ul>
-
+        
+        <?php
+            $get_cat_inf = get_the_terms( get_the_ID(), 'category' );
+            $cat_id = $get_cat_inf[0]->term_id;
+            $forms_a = get_term_meta($cat_id, 'contact_form_block_projects_category', true);
+            if($forms_a){
+        ?>
         <div class="container-fluid want-order">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="title">хотите заказать подобный проект?</p>
-                        <div class="agree">
-                            <input id="i-take" type="checkbox">
-                            <label for="i-take">Согласен на обработку персональных данных</label>
-                        </div>
-                        <div class="order-block">
-                            <input type="text" class="clear" id="email" placeholder="Введите Ваш e-mail">
-                            <input type="submit" class="agree-button no-active" value="Отправить">
-                        </div>
+                        <?php
+                            echo do_shortcode('[contact-form-7 id=" ' . $forms_a . ' "]'); 
+                        ?>
                     </div>
                 </div>
             </div>
         </div>
-
+        <?php } ?>
     </main>
 
     <!-- end main-works-in -->
     
-<script type="text/javascript">
-$(document).ready(function() {
-    if($(window).load()){
-        $(".clear").val('');
-        $('#i-take').removeAttr('checked');
-        $(".agree-button").replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
-    }
-    
-    var checkbox = $("#i-take");
-    
-    checkbox.change(function(event) {
-        var checkbox = event.target;
-        if (checkbox.checked) {
-            $(".agree-button").replaceWith('<input type="submit" class="agree-button active" onclick="SendShort();" value="Отправить">');
-        }else{
-            $(".agree-button").replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
-        }
-    });
-});
-</script>
-
-<script type="text/javascript">
-//форма обратной связи
-function SendShort() {
-    var data = {
-        'action': 'SendShort',
-        'email' : $('#email').val(),
-    };
-    $.ajax({
-        url:'http://' + location.host + '/wp-admin/admin-ajax.php',
-        data:data,
-        type:'POST',
-        success:function(data){
-            swal(data.message);
-            
-            if(data.status == 200) {
-                $('#i-take').removeAttr('checked');
-                $( ".agree-button" ).replaceWith('<input type="submit" class="agree-button no-active" value="Отправить">');
-            }
-        }
-    });
-};
-</script>
-
 <?php get_footer(); ?>

@@ -15,7 +15,7 @@ get_header();
     <?php
         $term = get_queried_object();
         $cat_id = $term->term_id;
-        $cat_description = html_entity_decode(get_option('category_'.$cat_id.'_primary_title_projects_category'));
+        $cat_description = html_entity_decode(get_term_meta($cat_id, 'primary_title_projects_category', true));
     ?>
     <div class="container-fluid block-under-header" data-speed="5" data-type="background">
         <div class="container">
@@ -76,10 +76,11 @@ get_header();
                                 
                                 if($projects){
                                 foreach( $projects as $projects_list ){
+                                    $image = wp_get_attachment_image(get_post_meta( $projects_list->ID, 'logo_image_projects_category', $single = true ), 'full');
                             ?>		
                                 <li style="background-color: <?php echo get_post_meta( $projects_list->ID, 'background_color_projects_category', $single = true ); ?>">
                                     <a href="<?php echo get_permalink($projects_list->ID); ?>">
-                                        <?php echo getImageCourse($projects_list->ID, 'logo_image_projects_category', 'small'); ?>
+                                        <?php echo $image ? $image : '<img src="' . esc_url( get_template_directory_uri() ) . '/images/no-projects-image.png">'; ?>
                                     </a>
                                 </li>
                             <?php	

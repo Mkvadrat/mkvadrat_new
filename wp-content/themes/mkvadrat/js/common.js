@@ -145,20 +145,13 @@ $(document).ready(function() {
         $(".nav-header > ul").slideToggle();
     });
     
-    if($(window).load()){
-        $(".agree-button").replaceWith('<input type="submit" value="Отправить" class="wpcf7-form-control wpcf7-submit agree-button no-active">');
-    }
+    $('.send-form *[type="submit"]').attr('disabled', 'disabled');
     
-    var checkbox = $("#i-take");
-    
-    checkbox.change(function(event) {
-        var checkbox = event.target;
-        if (checkbox.checked) {
-            $(".agree-button").replaceWith('<input type="submit" value="Отправить" class="wpcf7-form-control wpcf7-submit agree-button active">');
-        }else{
-            $(".agree-button").replaceWith('<input type="submit" value="Отправить" class="wpcf7-form-control wpcf7-submit agree-button no-active">');
+    $('.send-form .agree *[type="checkbox"]').on('change', function () {
+        if ($(this).is(':checked')) {
+            $(this).parents('.agree').find('*[type="submit"]').removeAttr('disabled');
+        } else {
+            $(this).parents('.agree').find('*[type="submit"]').attr('disabled', 'disabled');
         }
     });
-
-
 });
