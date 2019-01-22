@@ -30,7 +30,8 @@ get_header();
     <!-- start main-services -->
 
     <main class="main-services">
-
+        
+        <?php if(get_post_meta( get_the_ID(), 'enable_block_a_section_services_page', $single = true ) == 'yes'){ ?>
         <div class="container-fluid block-under-header">
             <div class="container">
                 <div class="row">
@@ -41,7 +42,9 @@ get_header();
                 </div>
             </div>
         </div>
-
+        <?php } ?>
+        
+        <?php if(get_post_meta( get_the_ID(), 'enable_block_b_section_services_page', $single = true ) == 'yes'){ ?>
         <div class="container-fluid bg-blue">
             <div class="container">
                 <div class="row">
@@ -85,25 +88,24 @@ get_header();
                 </div>
             </div>
         </div>
+        <?php } ?>
+        
+        
+        <?php
+            $forms_a = get_post_meta( get_the_ID(), 'contact_form_block_services_page', $single = true );
 
+            if($forms_a){
+        ?>
         <div class="container-fluid want-order">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <p class="title">хотите заказать услугу?</p>
-                        <div class="agree">
-                            <input id="i-take" type="checkbox">
-                            <label for="i-take">Согласен на обработку персональных данных</label>
-                        </div>
-                        <div class="order-block">
-                            <input type="text" id="email" placeholder="Введите Ваш e-mail">
-                            <input type="submit" onclick="SendShort();" value="Заказать">
-                        </div>
+                        <?php echo do_shortcode('[contact-form-7 id=" ' . $forms_a . ' "]'); ?>
                     </div>
                 </div>
             </div>
         </div>
-
+        <?php } ?>
     </main>
 
     <!-- end main-services -->

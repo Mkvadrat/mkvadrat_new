@@ -48,10 +48,10 @@ Version: 1.0
             <div class="fixed-menu">
 				<a class="logo-2" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<img
-					  src="<?php header_image(); ?>"
-					  height="<?php echo get_custom_header()->height; ?>"
-					  width="<?php echo get_custom_header()->width; ?>"
-					  alt="logotype"
+						src="<?php header_image(); ?>"
+						height="<?php echo get_custom_header()->height; ?>"
+						width="<?php echo get_custom_header()->width; ?>"
+						alt="logotype"
 					/>
 				</a>
                 <button><i class="fa fa-bars" aria-hidden="true"></i></button>

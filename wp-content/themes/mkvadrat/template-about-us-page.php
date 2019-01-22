@@ -128,7 +128,7 @@ get_header();
 								foreach($project_list as $list){
                                     $image = wp_get_attachment_image(get_post_meta( $list->ID, 'logo_image_projects_category', $single = true ), 'full');
 									$link = get_permalink($list->ID);
-									$style =  get_post_meta( $list->ID, 'background_color_about_us_page', $single = true ); 
+									$style = get_post_meta( $list->ID, 'background_color_about_us_page', $single = true ); 
 							?>
                             <li style="background-color: <?php echo $style; ?>"><a href="<?php echo $link; ?>"><?php echo $logo; ?></a></li>
 							<?php } ?>
