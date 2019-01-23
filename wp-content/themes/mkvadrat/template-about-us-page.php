@@ -130,7 +130,7 @@ get_header();
 									$link = get_permalink($list->ID);
 									$style = get_post_meta( $list->ID, 'background_color_about_us_page', $single = true ); 
 							?>
-                            <li style="background-color: <?php echo $style; ?>"><a href="<?php echo $link; ?>"><?php echo $logo; ?></a></li>
+                            <li style="background-color: <?php echo $style; ?>"><a href="<?php echo $link; ?>"><?php echo $logo ? $logo : '<img src="' . esc_url( get_template_directory_uri() ) . '/images/no-projects-image.png">'; ?></a></li>
 							<?php } ?>
                         </ul>
                         <?php wp_reset_postdata(); ?>
