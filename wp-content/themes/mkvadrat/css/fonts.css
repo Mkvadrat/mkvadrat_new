@@ -1,31 +1,31 @@
-/* font-family: "robotoslabbold"; */
-@font-face {
-	font-family: "robotoslabbold";
-	src: url("../fonts/robotoslabbold.ttf") format("truetype");
-	font-style: normal;
-	font-weight: normal;
-}
-
-/* font-family: "robotoslablight"; */
-@font-face {
-	font-family: "robotoslablight";
-	src: url("../fonts/robotoslablight.ttf") format("truetype");
-	font-style: normal;
-	font-weight: normal;
-}
-
-/* font-family: "robotoslabregular"; */
-@font-face {
-	font-family: "robotoslabregular";
-	src: url("../fonts/robotoslabregular.ttf") format("truetype");
-	font-style: normal;
-	font-weight: normal;
-}
-
-/* font-family: "robotoslabthin"; */
-@font-face {
-	font-family: "robotoslabthin";
-	src: url("../fonts/robotoslabthin.ttf") format("truetype");
-	font-style: normal;
-	font-weight: normal;
+/* font-family: "robotoslabbold"; */
+@font-face {
+	font-family: "robotoslabbold";
+	src: url("../fonts/robotoslabbold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+/* font-family: "robotoslablight"; */
+@font-face {
+	font-family: "robotoslablight";
+	src: url("../fonts/robotoslablight.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+/* font-family: "robotoslabregular"; */
+@font-face {
+	font-family: "robotoslabregular";
+	src: url("../fonts/robotoslabregular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+/* font-family: "robotoslabthin"; */
+@font-face {
+	font-family: "robotoslabthin";
+	src: url("../fonts/robotoslabthin.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
 }
