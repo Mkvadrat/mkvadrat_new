@@ -523,7 +523,7 @@ function ngg_confirm_delete_album(form) {
 						<?php } ?>
 					<?php } else { ?>
 						<?php if (nggGallery::current_user_can('NextGEN Add/Delete album')) { ?>
-                            <span><?php esc_html_e('Add new album', 'nggallery'); ?>&nbsp;</span>
+                            <span class="ngg_new_album"><?php esc_html_e('Add new album', 'nggallery'); ?>&nbsp;</span>
                             <input class="search-input" id="newalbum" name="newalbum" type="text" value="" />
                             <input class="button-primary action" type="submit" name="add" value="<?php esc_attr_e('Add', 'nggallery'); ?>"/>
 						<?php } ?>
@@ -540,7 +540,7 @@ function ngg_confirm_delete_album(form) {
 			| <a href="#" title="<?php esc_attr_e('Maximize the widget content','nggallery'); ?>" id="all_max"><?php esc_html_e('Maximize', 'nggallery'); ?></a>
 			| <a href="#" title="<?php esc_attr_e('Minimize the widget content','nggallery'); ?>" id="all_min"><?php esc_html_e('Minimize', 'nggallery'); ?></a>
 			</div>
-			<?php esc_html_e('After you create and select an album, you can drag and drop a gallery or another album into your new album below','nggallery'); ?>
+			<?php esc_html_e('After you create and select an album, you can drag and drop a gallery or another album into your new album below.','nggallery'); ?>
 		</div>
 
 		<br class="clear" />
@@ -729,9 +729,11 @@ function ngg_confirm_delete_album(form) {
 			// for speed reason we limit it to 50
 			if ( $this->num_albums < 50 ) {
 				$thumbURL = "";
-				if ($album->previewpic) {
-					$image = $nggdb->find_image( $album->previewpic );
-                    if ($image) $thumbURL = @add_query_arg('timestamp', time(), $image->thumbURL);
+				if ($album->previewpic)
+				{
+					$image = $nggdb->find_image($album->previewpic);
+                    if ($image && $image->thumbURL)
+                        $thumbURL = @add_query_arg('timestamp', time(), $image->thumbURL);
 				}
 				$preview_image = $thumbURL  ? '<div class="inlinepicture"><img rel="'.$album->previewpic.'" src="' . nextgen_esc_url( $thumbURL ). '" /></div>' : '';
 			}
@@ -756,9 +758,11 @@ function ngg_confirm_delete_album(form) {
 			if ( $this->num_galleries < 50 ) {
 				// set image url
 				$thumbURL = "";
-				if ($gallery->previewpic) {
-					$image = $nggdb->find_image( $gallery->previewpic );
-					$thumbURL = @add_query_arg('timestamp', time(), $image->thumbURL);
+				if ($gallery->previewpic)
+				{
+					$image = $nggdb->find_image($gallery->previewpic);
+					if ($image && $image->thumbURL)
+					    $thumbURL = @add_query_arg('timestamp', time(), $image->thumbURL);
 				}
 				$preview_image = ( !is_null($thumbURL) )  ? '<div class="inlinepicture"><img rel="'.$gallery->previewpic.'" src="' . nextgen_esc_url( $thumbURL ). '" /></div>' : '';
 			}
